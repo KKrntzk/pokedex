@@ -6,6 +6,13 @@
   scroll-behavior: smooth;
 }
 
+main {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .logo-img {
   height: 80px;
 }
@@ -34,4 +41,10 @@ header {
   align-items: center;
   background-color: beige;
   border-radius: 25px;
+}
+
+.poke-sprite {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
 }

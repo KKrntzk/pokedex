@@ -34,7 +34,7 @@ function renderEachCard() {
 function getCardTemplate(pokeIndex) {
   return /*html*/ `
     <div class="single-cards">
-    <img id="pokeSprite(${pokeIndex})" src=""></img>
+    <img class="poke-sprite" id="pokeSprite(${pokeIndex})" src=""></img>
     <p  id="pokeName(${pokeIndex})"></p>
     <p id="pokeId(${pokeIndex})"></p>
     <p id="pokeType(${pokeIndex})"></p> 
