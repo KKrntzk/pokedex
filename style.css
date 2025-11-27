@@ -22,11 +22,16 @@ header {
   width: 90%;
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .single-cards {
+  height: 250px;
+  width: 250px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: beige;
+  border-radius: 25px;
 }
