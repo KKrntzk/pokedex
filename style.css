@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+.logo-img {
+  height: 80px;
+}
+
+header {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.poke-cards-display {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.single-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

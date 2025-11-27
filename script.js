@@ -13,11 +13,11 @@ async function fetchPokeData() {
       type: eachPokeData.types,
       sprite: eachPokeData.sprites.front_default,
     });
-    renderEachCard(i);
+    renderEachCard();
   }
 }
 
-function renderEachCard(i) {
+function renderEachCard() {
   const pokedexTargetRef = document.getElementById("pokemonCardsTarget");
   pokedexTargetRef.innerHTML = "";
   for (let pokeIndex = 0; pokeIndex < pokemon1.length; pokeIndex++) {
@@ -32,10 +32,12 @@ function renderEachCard(i) {
 
 function getCardTemplate(pokeIndex) {
   return /*html*/ `
-    <p id="pokeName(${pokeIndex})"></p>
-    <p id="pokeId(${pokeIndex})"></p>
-    <p id="pokeType(${pokeIndex})"></p>
+    <div class="single-cards">
     <img id="pokeSprite(${pokeIndex})" src=""></img>
+    <p  id="pokeName(${pokeIndex})"></p>
+    <p id="pokeId(${pokeIndex})"></p>
+    <p id="pokeType(${pokeIndex})"></p> 
+    </div>
     `;
 }
 
