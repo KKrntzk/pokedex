@@ -13,27 +13,44 @@ async function fetchPokeData() {
       type: eachPokeData.types,
       sprite: eachPokeData.sprites.front_default,
     });
-
-    renderCard(i);
+    renderEachCard(i);
   }
 }
 
-function renderCard(i) {
-  document.getElementById("pokeName").innerHTML += pokemon1[i].name;
-  document.getElementById("pokeId").innerHTML += pokemon1[i].index;
-  let typeTemplate = "";
-  for (let j = 0; j < pokemon1[i].type.length; j++) {
-    typeTemplate += getTypeTemplate(
-      pokemon1[i].type[j].type,
-      pokemon1[i].index
-    );
+function renderEachCard(i) {
+  const pokedexTargetRef = document.getElementById("pokemonCardsTarget");
+  pokedexTargetRef.innerHTML = "";
+  for (let pokeIndex = 0; pokeIndex < pokemon1.length; pokeIndex++) {
+    pokedexTargetRef.innerHTML += getCardTemplate(pokeIndex);
+    document.getElementById(`pokeName(${pokeIndex})`).innerHTML =
+      pokemon1[pokeIndex].name;
+    document.getElementById(`pokeId(${pokeIndex})`).innerHTML =
+      pokemon1[pokeIndex].index;
+    renderEachCardType(pokeIndex);
   }
-  document.getElementById("pokeType").innerHTML += typeTemplate;
-  document.getElementById("pokeSprite").setAttribute("src", pokemon1[i].sprite);
 }
 
-function getTypeTemplate(type, index) {
+function getCardTemplate(pokeIndex) {
   return /*html*/ `
-        <p>${index} ${type.name}</p>
+    <p id="pokeName(${pokeIndex})"></p>
+    <p id="pokeId(${pokeIndex})"></p>
+    <p id="pokeType(${pokeIndex})"></p>
+    <img id="pokeSprite(${pokeIndex})" src=""></img>
+    `;
+}
+
+function renderEachCardType(pokeIndex) {
+  let typeTemplate = document.getElementById(`pokeType(${pokeIndex})`);
+  for (let j = 0; j < pokemon1[pokeIndex].type.length; j++) {
+    typeTemplate.innerHTML += getTypeTemplate(pokemon1[pokeIndex].type[j].type);
+  }
+  document
+    .getElementById(`pokeSprite(${pokeIndex})`)
+    .setAttribute("src", pokemon1[pokeIndex].sprite);
+}
+
+function getTypeTemplate(type) {
+  return /*html*/ `
+        <p> ${type.name}</p>
     `;
 }
