@@ -6,10 +6,9 @@ async function fetchPokeData() {
       `https://pokeapi.co/api/v2/pokemon/${i + 387}`
     );
     const eachPokeData = await response.json();
-
     pushPokemonIntoArray(eachPokeData);
-    renderEachCard();
   }
+  renderEachCard();
 }
 
 function pushPokemonIntoArray(eachPokeData) {
@@ -23,7 +22,6 @@ function pushPokemonIntoArray(eachPokeData) {
 
 function renderEachCard() {
   const pokedexTargetRef = document.getElementById("pokemonCardsTarget");
-  pokedexTargetRef.innerHTML = "";
   for (let pokeIndex = 0; pokeIndex < pokemonAll.length; pokeIndex++) {
     pokedexTargetRef.innerHTML += getCardTemplate(pokeIndex);
     document.getElementById(`pokeName(${pokeIndex})`).innerHTML =
