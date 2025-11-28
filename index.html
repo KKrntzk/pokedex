@@ -10,7 +10,7 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/modal.css" />
     <script src="./scripts/templates.js"></script>
     <script src="./script.js"></script>
   </head>
@@ -27,50 +27,8 @@
     <div class="main-content">
       <main>
         <section class="poke-cards-display" id="pokemonCardsTarget"></section>
-    
-
-   <div class="modal-layout">
-      <section class="modal-basic" id="basicInfo">
-          <header class="single-card-header">
-            <div># <span id="pokeId(${pokeIndex})"></span></div>
-          </header>    
-            <span class="poke-name"  id="pokeName(${pokeIndex})"></span>
-            <img class="poke-sprite" id="pokeSprite(${pokeIndex})" src=""></img>    
-            <p id="pokeType(${pokeIndex})"></p>
-
-           
-      </section>
-        <section class="modalInfo" id="modalInfo">
-          <header class="modal-header">
-            <a href="#">ABOUT</a>
-            <a href="#">STATS</a>
-            <a href="#">SHINY</a>
-          </header>
-              <div id="aboutSection">
-                <p><span>Height</span><span id="height(${pokeIndex})"></span></p>
-                <p><span>Weight</span><span id="weight(${pokeIndex})"></span></p>
-              </div>
-
-              <div id="statSection">
-                <p><span>HP</span><span id="hp(${pokeIndex})"></span></p>
-                <p><span>Attack</span><span id="attack(${pokeIndex})"></span></p>
-                <p><span>Defense</span><span id="defense(${pokeIndex})"></span></p>
-                <p><span>Special Attack</span><span id="spAttack(${pokeIndex})"></span></p>
-                <p><span>Special Defense</span><span id="spDefense(${pokeIndex})"></span></p>
-                <p><span>Speed</span><span id="speed(${pokeIndex})"></span></p>
-              </div>
-
-              <div id="shinySection">
-                <img class="poke-shiny" id="pokeShiny(${pokeIndex})" src=""></img>
-              </div>
-             </section>
-     
-    </div>
       </main>
-      <dialog id="singleModal(${pokeIndex})">
-     
-
-      </dialog>
+      <dialog class="modal-layout" id="singleModal"></dialog>
     </div>
   </body>
 </html>

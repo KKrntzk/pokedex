@@ -63,7 +63,7 @@ function renderModal(pokeIndex) {
   renderStatInfo(pokeIndex);
   renderShiny(pokeIndex);
   renderAboutSection(pokeIndex);
-  renderAbilities(pokeIndex);
+  // renderAbilities(pokeIndex);
 }
 
 function renderStatInfo(pokeIndex) {
@@ -90,9 +90,9 @@ function renderShiny(pokeIndex) {
 
 function renderAboutSection(pokeIndex) {
   document.getElementById(`height(${pokeIndex})`).innerHTML =
-    pokemonAll[pokeindex].height;
+    pokemonAll[pokeIndex].height;
   document.getElementById(`weight(${pokeIndex})`).innerHTML =
-    pokemonAll[pokeindex].weight;
+    pokemonAll[pokeIndex].weight;
 }
 
 function renderAbilities(pokeIndex) {
@@ -100,4 +100,11 @@ function renderAbilities(pokeIndex) {
     document.getElementById(`abilities(${pokeIndex})`).innerHTML +=
       pokemonAll[pokeindex].abilities[k].ability.name;
   }
+}
+
+function openDialog(pokeIndex) {
+  const dialogRef = document.getElementById(`singleModal`);
+  dialogRef.innerHTML = getModalTemplate(pokeIndex);
+  renderModal(pokeIndex);
+  dialogRef.showModal(pokeIndex);
 }
