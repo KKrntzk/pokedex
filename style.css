@@ -4,6 +4,7 @@
   box-sizing: border-box;
   text-decoration: none;
   scroll-behavior: smooth;
+  font-family: "Roboto Flex";
 }
 
 @font-face {
@@ -67,7 +68,7 @@ input {
   background-color: #7f9cdf;
 }
 
-header {
+.main-header {
   height: 200px;
   display: flex;
   justify-content: space-around;
@@ -102,6 +103,20 @@ header {
   border-radius: 25px;
   color: white;
   box-shadow: 5px 5px 5px rgb(45, 54, 63);
+}
+
+.single-card-header {
+  width: 80%;
+  display: flex;
+  justify-content: end;
+  align-items: start;
+  font-weight: old;
+}
+
+.poke-name {
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgb(32, 29, 29);
 }
 
 .poke-sprite {
