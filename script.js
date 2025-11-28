@@ -38,8 +38,9 @@ function renderEachCard() {
 function getCardTemplate(pokeIndex) {
   return /*html*/ `
     <div id="singleCard(${pokeIndex})" class="single-cards">
+       <p  id="pokeName(${pokeIndex})"></p>
     <img class="poke-sprite" id="pokeSprite(${pokeIndex})" src=""></img>
-    <p  id="pokeName(${pokeIndex})"></p>
+   
     <p id="pokeId(${pokeIndex})"></p>
     <p id="pokeType(${pokeIndex})"></p> 
     </div>
@@ -55,9 +56,6 @@ function renderEachCardType(pokeIndex) {
     document
       .getElementById(`singleCard(${pokeIndex})`)
       .classList.add(`type-${pokemonAll[pokeIndex].type[j].type.name}`);
-
-    if (pokemonAll.type) {
-    }
   }
   document
     .getElementById(`pokeSprite(${pokeIndex})`)
