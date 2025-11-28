@@ -2,6 +2,7 @@ let pokemonAll = [];
 
 function init() {
   fetchPokeData();
+  console.log(pokemonAll);
 }
 
 async function fetchPokeData() {
@@ -21,6 +22,7 @@ function pushPokemonIntoArray(eachPokeData) {
     index: eachPokeData.id,
     type: eachPokeData.types,
     sprite: eachPokeData.sprites.front_default,
+    stats: eachPokeData.stats,
   });
 }
 
