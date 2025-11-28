@@ -1,5 +1,9 @@
 let pokemonAll = [];
 
+function init() {
+  fetchPokeData();
+}
+
 async function fetchPokeData() {
   for (let i = 0; i < 40; i++) {
     const response = await fetch(
