@@ -1,0 +1,20 @@
+.modal-layout {
+  height: 1200px;
+  width: 700px;
+  background-color: #a33ea1;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-info {
+  height: 400px;
+  width: 90%;
+  background-color: #220a64;
+}
+
+.modal-basic {
+  height: 400px;
+  width: 90%;
+}
