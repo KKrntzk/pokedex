@@ -58,6 +58,14 @@ function renderEachCardType(pokeIndex) {
     .setAttribute("src", pokemonAll[pokeIndex].sprite);
 }
 
+function renderModal(pokeIndex) {
+  document.getElementById(`singleCard(${pokeIndex})`);
+  renderStatInfo(pokeIndex);
+  renderShiny(pokeIndex);
+  renderAboutSection(pokeIndex);
+  renderAbilities(pokeIndex);
+}
+
 function renderStatInfo(pokeIndex) {
   const pokeStats = pokemonAll[pokeIndex].stats;
   document.getElementById(`hp(${pokeIndex})`).innerHTML =
