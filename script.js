@@ -23,6 +23,10 @@ function pushPokemonIntoArray(eachPokeData) {
     type: eachPokeData.types,
     sprite: eachPokeData.sprites.front_default,
     stats: eachPokeData.stats,
+    shiny: eachPokeData.sprites.front_shiny,
+    height: eachPokeData.height,
+    weight: eachPokeData.weight,
+    abilities: eachPokeData.abilities,
   });
 }
 
@@ -52,4 +56,40 @@ function renderEachCardType(pokeIndex) {
   document
     .getElementById(`pokeSprite(${pokeIndex})`)
     .setAttribute("src", pokemonAll[pokeIndex].sprite);
+}
+
+function renderStatInfo(pokeIndex) {
+  const pokeStats = pokemonAll[pokeIndex].stats;
+  document.getElementById(`hp(${pokeIndex})`).innerHTML =
+    pokeStats[0].base_stat;
+  document.getElementById(`attack(${pokeIndex})`).innerHTML =
+    pokeStats[1].base_stat;
+  document.getElementById(`defense(${pokeIndex})`).innerHTML =
+    pokeStats[2].base_stat;
+  document.getElementById(`spAttack(${pokeIndex})`).innerHTML =
+    pokeStats[3].base_stat;
+  document.getElementById(`spDefense(${pokeIndex})`).innerHTML =
+    pokeStats[4].base_stat;
+  document.getElementById(`speed(${pokeIndex})`).innerHTML =
+    pokeStats[5].base_stat;
+}
+
+function renderShiny(pokeIndex) {
+  document
+    .getElementById(`pokeShiny(${pokeIndex})`)
+    .setAttribute("src", pokemonAll[pokeIndex].shiny);
+}
+
+function renderAboutSection(pokeIndex) {
+  document.getElementById(`height(${pokeIndex})`).innerHTML =
+    pokemonAll[pokeindex].height;
+  document.getElementById(`weight(${pokeIndex})`).innerHTML =
+    pokemonAll[pokeindex].weight;
+}
+
+function renderAbilities(pokeIndex) {
+  for (let k = 0; k < array.length; k++) {
+    document.getElementById(`abilities(${pokeIndex})`).innerHTML +=
+      pokemonAll[pokeindex].abilities[k].ability.name;
+  }
 }
