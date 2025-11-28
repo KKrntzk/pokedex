@@ -38,11 +38,10 @@ function renderEachCard() {
 function getCardTemplate(pokeIndex) {
   return /*html*/ `
     <div id="singleCard(${pokeIndex})" class="single-cards">
-       <p  id="pokeName(${pokeIndex})"></p>
+    <p  id="pokeName(${pokeIndex})"></p>
     <img class="poke-sprite" id="pokeSprite(${pokeIndex})" src=""></img>
-   
-    <p id="pokeId(${pokeIndex})"></p>
-    <p id="pokeType(${pokeIndex})"></p> 
+    <div>#<span id="pokeId(${pokeIndex})"></span></div>
+    <p id="pokeType(${pokeIndex})"></p>    
     </div>
     `;
 }
@@ -64,6 +63,6 @@ function renderEachCardType(pokeIndex) {
 
 function getTypeTemplate(type) {
   return /*html*/ `
-        <p> ${type.name}</p>
+        <p class="poke-type">${type.name}</p>
     `;
 }

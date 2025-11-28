@@ -62,12 +62,24 @@ header {
   background-color: beige;
   border-radius: 25px;
   color: white;
+  box-shadow: 5px 5px 5px rgb(45, 54, 63);
 }
 
 .poke-sprite {
   height: 100px;
   width: 100px;
   object-fit: contain;
+}
+
+.poke-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 30px;
+  border-radius: 25px;
+  box-shadow: 2px 2px 2px 2px rgba(45, 54, 63, 0.651);
+  margin: 8px;
 }
 
 .type-normal {
