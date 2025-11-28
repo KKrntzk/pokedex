@@ -40,7 +40,7 @@ function getCardTemplate(pokeIndex) {
     <div id="singleCard(${pokeIndex})" class="single-cards">
     <p  id="pokeName(${pokeIndex})"></p>
     <img class="poke-sprite" id="pokeSprite(${pokeIndex})" src=""></img>
-    <div>#<span id="pokeId(${pokeIndex})"></span></div>
+    <div># <span id="pokeId(${pokeIndex})"></span></div>
     <p id="pokeType(${pokeIndex})"></p>    
     </div>
     `;
