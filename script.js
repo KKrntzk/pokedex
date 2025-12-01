@@ -7,15 +7,21 @@ function init() {
 
 let offset = 387;
 const renderedAmount = 30;
+const limit = 494;
 
 async function fetchPokeData() {
-  for (let i = offset; i < offset + renderedAmount; i++) {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
-    const eachPokeData = await response.json();
-    pushPokemonIntoArray(eachPokeData);
-    renderEachCard(pokemonAll.length - 1);
+  if (pokemonAll.length >= 107) {
+    console.log("limit erreicht");
+    return;
+  } else {
+    for (let i = offset; i < offset + renderedAmount; i++) {
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
+      const eachPokeData = await response.json();
+      pushPokemonIntoArray(eachPokeData);
+      renderEachCard(pokemonAll.length - 1);
+    }
+    offset += renderedAmount;
   }
-  offset += renderedAmount;
 }
 
 // pokemonAll.forEach()
