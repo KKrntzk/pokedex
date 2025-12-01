@@ -107,4 +107,5 @@ function openDialog(pokeIndex) {
   dialogRef.innerHTML = getModalTemplate(pokeIndex);
   renderModal(pokeIndex);
   dialogRef.showModal(pokeIndex);
+  document.body.classList.add("noscroll");
 }
