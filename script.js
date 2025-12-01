@@ -130,10 +130,9 @@ function renderAbilities(pokeIndex) {
 
 function openDialog(pokeIndex) {
   const dialogRef = document.getElementById(`singleModal`);
-  dialogRef.showModal(pokeIndex);
   dialogRef.innerHTML = getModalTemplate(pokeIndex);
   renderModal(pokeIndex);
-
+  dialogRef.showModal(pokeIndex);
   document.body.classList.add("noscroll");
 }
 

@@ -2,8 +2,16 @@
   font-family: "Roboto Flex";
   height: 1200px;
   width: 700px;
-  background-color: #a33ea1;
   border-radius: 25px;
+  color: white;
+  border: none;
+}
+
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .modal-info {
