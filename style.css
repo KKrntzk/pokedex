@@ -220,3 +220,7 @@ input {
   color: white;
   background-color: #8598dd;
 }
+
+.display-none {
+  display: none;
+}

@@ -11,7 +11,7 @@ function getCardTemplate(pokeIndex) {
 
 function getTypeTemplate(type) {
   return /*html*/ `
-        <p class="poke-type">${type.name}</p>
+        <p id="" class="poke-type">${type.name}</p>
     `;
 }
 

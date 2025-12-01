@@ -10,17 +10,17 @@ const renderedAmount = 30;
 const limit = 494;
 
 async function fetchPokeData() {
-  if (pokemonAll.length >= 107) {
-    console.log("limit erreicht");
-    return;
-  } else {
+  if (offset <= limit) {
     for (let i = offset; i < offset + renderedAmount; i++) {
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
       const eachPokeData = await response.json();
       pushPokemonIntoArray(eachPokeData);
       renderEachCard(pokemonAll.length - 1);
     }
-    offset += renderedAmount;
+  }
+  offset += renderedAmount;
+  if (offset >= limit) {
+    document.getElementById("loadingBtn").classList.add("display-none");
   }
 }
 
