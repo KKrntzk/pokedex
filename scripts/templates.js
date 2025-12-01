@@ -16,8 +16,8 @@ function getTypeTemplate(type) {
 }
 
 function getModalTemplate(pokeIndex) {
-  return `<div id="eachModal(${pokeIndex})" class="modal">
-            <section class="modal-basic" id="basicInfo(${pokeIndex})">
+  return `<div id="eachModal(${pokeIndex})" class="">
+            <section class="modal-basic modal id="basicInfo(${pokeIndex})">
           <header class="single-card-header">
             <div># <span id="pokeModalId(${pokeIndex})"></span></div>
           </header>    
@@ -27,16 +27,16 @@ function getModalTemplate(pokeIndex) {
 
            <section class="modal-info" id="modalInfo">
           <header class="modal-header">
-            <a href="#">About</a>
-            <a href="#">Base Stats</a>
-            <a href="#">Shiny</a>
+            <a class="underline" id="aboutRef" onclick="toggleAbout()" href="#">About</a>
+            <a id="statRef" onclick="toggleStats()" href="#">Base Stats</a>
+            <a id="shinyRef" onclick="toggleShiny()" href="#">Shiny</a>
           </header>
-              <div id="aboutSection">
+              <div id="aboutSection" class="display-toggle display-toggle-on ">
                 <p><span>Height</span><span id="height(${pokeIndex})"></span></p>
                 <p><span>Weight</span><span id="weight(${pokeIndex})"></span></p>
               </div>
 
-              <div id="statSection">
+              <div id="statSection" class="display-toggle">
                 <p><span>HP</span><span id="hp(${pokeIndex})"></span></p>
                 <p><span>Attack</span><span id="attack(${pokeIndex})"></span></p>
                 <p><span>Defense</span><span id="defense(${pokeIndex})"></span></p>
@@ -45,7 +45,7 @@ function getModalTemplate(pokeIndex) {
                 <p><span>Speed</span><span id="speed(${pokeIndex})"></span></p>
               </div>
 
-              <div id="shinySection">
+              <div id="shinySection" class="display-toggle">
                 <img class="poke-shiny" id="pokeShiny(${pokeIndex})" src=""></img>
               </div>
              </section>

@@ -147,3 +147,39 @@ function closeDialog() {
   //   // }
   // });
 }
+
+function toggleShiny() {
+  document.getElementById("shinyRef").classList.add("underline");
+  document.getElementById("aboutRef").classList.remove("underline");
+  document.getElementById("statRef").classList.remove("underline");
+  const statSectionRef = document.getElementById("statSection");
+  statSectionRef.classList.remove("display-toggle-on");
+  const aboutSectionRef = document.getElementById("aboutSection");
+  aboutSectionRef.classList.remove("display-toggle-on");
+  const shinySectionRef = document.getElementById("shinySection");
+  shinySectionRef.classList.add("display-toggle-on");
+}
+
+function toggleAbout() {
+  document.getElementById("shinyRef").classList.remove("underline");
+  document.getElementById("aboutRef").classList.add("underline");
+  document.getElementById("statRef").classList.remove("underline");
+  const statSectionRef = document.getElementById("statSection");
+  statSectionRef.classList.remove("display-toggle-on");
+  const aboutSectionRef = document.getElementById("aboutSection");
+  aboutSectionRef.classList.add("display-toggle-on");
+  const shinySectionRef = document.getElementById("shinySection");
+  shinySectionRef.classList.remove("display-toggle-on");
+}
+
+function toggleStats() {
+  document.getElementById("shinyRef").classList.remove("underline");
+  document.getElementById("aboutRef").classList.remove("underline");
+  document.getElementById("statRef").classList.add("underline");
+  const statSectionRef = document.getElementById("statSection");
+  statSectionRef.classList.add("display-toggle-on");
+  const aboutSectionRef = document.getElementById("aboutSection");
+  aboutSectionRef.classList.remove("display-toggle-on");
+  const shinySectionRef = document.getElementById("shinySection");
+  shinySectionRef.classList.remove("display-toggle-on");
+}
