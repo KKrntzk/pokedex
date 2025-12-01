@@ -38,26 +38,6 @@ function getPokeInfo(pokeIndex) {
     pokemonAll[pokeIndex].index;
 }
 
-function getPokeModalInfo(pokeIndex) {
-  document.getElementById(`pokeModalName(${pokeIndex})`).innerHTML =
-    pokemonAll[pokeIndex].name.charAt(0).toUpperCase() +
-    pokemonAll[pokeIndex].name.substr(1);
-  document.getElementById(`pokeModalId(${pokeIndex})`).innerHTML =
-    pokemonAll[pokeIndex].index;
-  let typeTemplate = document.getElementById(`pokeModalType(${pokeIndex})`);
-  for (let j = 0; j < pokemonAll[pokeIndex].type.length; j++) {
-    typeTemplate.innerHTML += getTypeTemplate(
-      pokemonAll[pokeIndex].type[j].type
-    );
-    document
-      .getElementById(`eachModal(${pokeIndex})`)
-      .classList.add(`type-${pokemonAll[pokeIndex].type[j].type.name}`);
-  }
-  document
-    .getElementById(`pokeModalSprite(${pokeIndex})`)
-    .setAttribute("src", pokemonAll[pokeIndex].sprite);
-}
-
 function renderEachCard() {
   const pokedexTargetRef = document.getElementById("pokemonCardsTarget");
   for (let pokeIndex = 0; pokeIndex < pokemonAll.length; pokeIndex++) {
@@ -79,6 +59,26 @@ function renderEachCardType(pokeIndex) {
   }
   document
     .getElementById(`pokeSprite(${pokeIndex})`)
+    .setAttribute("src", pokemonAll[pokeIndex].sprite);
+}
+//#region modal
+function getPokeModalInfo(pokeIndex) {
+  document.getElementById(`pokeModalName(${pokeIndex})`).innerHTML =
+    pokemonAll[pokeIndex].name.charAt(0).toUpperCase() +
+    pokemonAll[pokeIndex].name.substr(1);
+  document.getElementById(`pokeModalId(${pokeIndex})`).innerHTML =
+    pokemonAll[pokeIndex].index;
+  let typeTemplate = document.getElementById(`pokeModalType(${pokeIndex})`);
+  for (let j = 0; j < pokemonAll[pokeIndex].type.length; j++) {
+    typeTemplate.innerHTML += getTypeTemplate(
+      pokemonAll[pokeIndex].type[j].type
+    );
+    document
+      .getElementById(`eachModal(${pokeIndex})`)
+      .classList.add(`type-${pokemonAll[pokeIndex].type[j].type.name}`);
+  }
+  document
+    .getElementById(`pokeModalSprite(${pokeIndex})`)
     .setAttribute("src", pokemonAll[pokeIndex].sprite);
 }
 
@@ -128,26 +128,6 @@ function renderAbilities(pokeIndex) {
   }
 }
 
-function openDialog(pokeIndex) {
-  const dialogRef = document.getElementById(`singleModal`);
-  dialogRef.innerHTML = getModalTemplate(pokeIndex);
-  renderModal(pokeIndex);
-  dialogRef.showModal(pokeIndex);
-  document.body.classList.add("noscroll");
-}
-
-function closeDialog() {
-  const dialogRef = document.getElementById(`singleModal`);
-  dialogRef.close();
-  // dialogRef.addEventListener("click", (event) => {
-  //   console.log(event.target);
-
-  //   // if (event.target == dialogRef) {
-  //   //   dialogRef.closest();
-  //   // }
-  // });
-}
-
 function toggleShiny() {
   document.getElementById("shinyRef").classList.add("underline");
   document.getElementById("aboutRef").classList.remove("underline");
@@ -183,3 +163,25 @@ function toggleStats() {
   const shinySectionRef = document.getElementById("shinySection");
   shinySectionRef.classList.remove("display-toggle-on");
 }
+//#endregion
+//#region dialog
+function openDialog(pokeIndex) {
+  const dialogRef = document.getElementById(`singleModal`);
+  dialogRef.innerHTML = getModalTemplate(pokeIndex);
+  renderModal(pokeIndex);
+  dialogRef.showModal(pokeIndex);
+  document.body.classList.add("noscroll");
+}
+
+function closeDialog() {
+  const dialogRef = document.getElementById(`singleModal`);
+  dialogRef.close();
+  // dialogRef.addEventListener("click", (event) => {
+  //   console.log(event.target);
+
+  //   // if (event.target == dialogRef) {
+  //   //   dialogRef.closest();
+  //   // }
+  // });
+}
+//#endregion

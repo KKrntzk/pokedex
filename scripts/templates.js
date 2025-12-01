@@ -17,13 +17,15 @@ function getTypeTemplate(type) {
 
 function getModalTemplate(pokeIndex) {
   return `<div id="eachModal(${pokeIndex})" class="">
-            <section class="modal-basic modal id="basicInfo(${pokeIndex})">
+            <section class="modal-basic" id="basicInfo(${pokeIndex})">
+            <section class="modal-main">
           <header class="single-card-header">
             <div># <span id="pokeModalId(${pokeIndex})"></span></div>
           </header>    
             <span class="poke-name"  id="pokeModalName(${pokeIndex})"></span>
             <img class="poke-sprite" id="pokeModalSprite(${pokeIndex})" src=""></img>    
             <p id="pokeModalType(${pokeIndex})"></p>
+            </section>
 
            <section class="modal-info" id="modalInfo">
           <header class="modal-header">
@@ -31,6 +33,8 @@ function getModalTemplate(pokeIndex) {
             <a id="statRef" onclick="toggleStats()" href="#">Base Stats</a>
             <a id="shinyRef" onclick="toggleShiny()" href="#">Shiny</a>
           </header>
+
+          <div class="modal-info-inner-layout" > 
               <div id="aboutSection" class="display-toggle display-toggle-on ">
                 <p><span>Height</span><span id="height(${pokeIndex})"></span></p>
                 <p><span>Weight</span><span id="weight(${pokeIndex})"></span></p>
@@ -47,6 +51,7 @@ function getModalTemplate(pokeIndex) {
 
               <div id="shinySection" class="display-toggle">
                 <img class="poke-shiny" id="pokeShiny(${pokeIndex})" src=""></img>
+              </div>
               </div>
              </section>
 

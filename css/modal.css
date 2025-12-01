@@ -26,7 +26,16 @@ dialog::backdrop {
   border-radius: 40px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 40px;
+}
+
+.modal-main {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-basic {
@@ -68,4 +77,13 @@ body.noscroll {
 
 .underline {
   text-decoration: underline;
+}
+
+.modal-info-inner-layout {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
