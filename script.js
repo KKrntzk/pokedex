@@ -38,6 +38,26 @@ function getPokeInfo(pokeIndex) {
     pokemonAll[pokeIndex].index;
 }
 
+function getPokeModalInfo(pokeIndex) {
+  document.getElementById(`pokeModalName(${pokeIndex})`).innerHTML =
+    pokemonAll[pokeIndex].name.charAt(0).toUpperCase() +
+    pokemonAll[pokeIndex].name.substr(1);
+  document.getElementById(`pokeModalId(${pokeIndex})`).innerHTML =
+    pokemonAll[pokeIndex].index;
+  let typeTemplate = document.getElementById(`pokeModalType(${pokeIndex})`);
+  for (let j = 0; j < pokemonAll[pokeIndex].type.length; j++) {
+    typeTemplate.innerHTML += getTypeTemplate(
+      pokemonAll[pokeIndex].type[j].type
+    );
+    document
+      .getElementById(`singleCard(${pokeIndex})`)
+      .classList.add(`type-${pokemonAll[pokeIndex].type[j].type.name}`);
+  }
+  document
+    .getElementById(`pokeModalSprite(${pokeIndex})`)
+    .setAttribute("src", pokemonAll[pokeIndex].sprite);
+}
+
 function renderEachCard() {
   const pokedexTargetRef = document.getElementById("pokemonCardsTarget");
   for (let pokeIndex = 0; pokeIndex < pokemonAll.length; pokeIndex++) {
@@ -67,6 +87,8 @@ function renderModal(pokeIndex) {
   renderStatInfo(pokeIndex);
   renderShiny(pokeIndex);
   renderAboutSection(pokeIndex);
+  let modalBasicInfoRef = document.getElementById(`basicInfo(${pokeIndex})`);
+  modalBasicInfoRef = getPokeModalInfo(pokeIndex);
   // renderAbilities(pokeIndex);
 }
 
@@ -108,9 +130,10 @@ function renderAbilities(pokeIndex) {
 
 function openDialog(pokeIndex) {
   const dialogRef = document.getElementById(`singleModal`);
+  dialogRef.showModal(pokeIndex);
   dialogRef.innerHTML = getModalTemplate(pokeIndex);
   renderModal(pokeIndex);
-  dialogRef.showModal(pokeIndex);
+
   document.body.classList.add("noscroll");
 }
 

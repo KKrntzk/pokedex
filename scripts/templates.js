@@ -17,13 +17,13 @@ function getTypeTemplate(type) {
 
 function getModalTemplate(pokeIndex) {
   return `<div class="modal">
-            <section class="modal-basic" id="basicInfo">
+            <section class="modal-basic" id="basicInfo(${pokeIndex})">
           <header class="single-card-header">
-            <div># <span id="pokeId(${pokeIndex})"></span></div>
+            <div># <span id="pokeModalId(${pokeIndex})"></span></div>
           </header>    
-            <span class="poke-name"  id="pokeName(${pokeIndex})"></span>
-            <img class="poke-sprite" id="pokeSprite(${pokeIndex})" src=""></img>    
-            <p id="pokeType(${pokeIndex})"></p>
+            <span class="poke-name"  id="pokeModalName(${pokeIndex})"></span>
+            <img class="poke-sprite" id="pokeModalSprite(${pokeIndex})" src=""></img>    
+            <p id="pokeModalType(${pokeIndex})"></p>
 
            <section class="modal-info" id="modalInfo">
           <header class="modal-header">
