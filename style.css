@@ -212,3 +212,11 @@ input {
 .type-fairy {
   background-color: #d685ad;
 }
+
+.load-more-btn {
+  padding: 20px;
+  border-radius: 25px;
+  margin-top: 20px;
+  color: white;
+  background-color: #8598dd;
+}
