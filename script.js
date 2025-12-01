@@ -30,15 +30,19 @@ function pushPokemonIntoArray(eachPokeData) {
   });
 }
 
+function getPokeInfo(pokeIndex) {
+  document.getElementById(`pokeName(${pokeIndex})`).innerHTML =
+    pokemonAll[pokeIndex].name.charAt(0).toUpperCase() +
+    pokemonAll[pokeIndex].name.substr(1);
+  document.getElementById(`pokeId(${pokeIndex})`).innerHTML =
+    pokemonAll[pokeIndex].index;
+}
+
 function renderEachCard() {
   const pokedexTargetRef = document.getElementById("pokemonCardsTarget");
   for (let pokeIndex = 0; pokeIndex < pokemonAll.length; pokeIndex++) {
     pokedexTargetRef.innerHTML += getCardTemplate(pokeIndex);
-    document.getElementById(`pokeName(${pokeIndex})`).innerHTML =
-      pokemonAll[pokeIndex].name.charAt(0).toUpperCase() +
-      pokemonAll[pokeIndex].name.substr(1);
-    document.getElementById(`pokeId(${pokeIndex})`).innerHTML =
-      pokemonAll[pokeIndex].index;
+    getPokeInfo(pokeIndex);
     renderEachCardType(pokeIndex);
   }
 }
@@ -108,4 +112,16 @@ function openDialog(pokeIndex) {
   renderModal(pokeIndex);
   dialogRef.showModal(pokeIndex);
   document.body.classList.add("noscroll");
+}
+
+function closeDialog() {
+  const dialogRef = document.getElementById(`singleModal`);
+  dialogRef.close();
+  // dialogRef.addEventListener("click", (event) => {
+  //   console.log(event.target);
+
+  //   // if (event.target == dialogRef) {
+  //   //   dialogRef.closest();
+  //   // }
+  // });
 }
