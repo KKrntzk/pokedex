@@ -14,6 +14,10 @@ dialog {
   transform: translate(-50%, -50%);
 }
 
+dialog::backdrop {
+  background-color: #07141ab4;
+}
+
 .modal-info {
   color: rgb(0, 0, 0);
   height: 50%;
