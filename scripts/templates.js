@@ -16,7 +16,7 @@ function getTypeTemplate(type) {
 }
 
 function getModalTemplate(pokeIndex) {
-  return `<div class="modal">
+  return `<div id="eachModal(${pokeIndex})" class="modal">
             <section class="modal-basic" id="basicInfo(${pokeIndex})">
           <header class="single-card-header">
             <div># <span id="pokeModalId(${pokeIndex})"></span></div>

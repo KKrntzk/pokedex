@@ -50,7 +50,7 @@ function getPokeModalInfo(pokeIndex) {
       pokemonAll[pokeIndex].type[j].type
     );
     document
-      .getElementById(`singleCard(${pokeIndex})`)
+      .getElementById(`eachModal(${pokeIndex})`)
       .classList.add(`type-${pokemonAll[pokeIndex].type[j].type.name}`);
   }
   document
