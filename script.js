@@ -5,16 +5,20 @@ function init() {
   console.log(pokemonAll);
 }
 
+let offset = 387;
+const renderedAmount = 30;
+
 async function fetchPokeData() {
-  for (let i = 0; i < 40; i++) {
-    const response = await fetch(
-      `https://pokeapi.co/api/v2/pokemon/${i + 387}`
-    );
+  for (let i = offset; i < offset + renderedAmount; i++) {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
     const eachPokeData = await response.json();
     pushPokemonIntoArray(eachPokeData);
+    renderEachCard(pokemonAll.length - 1);
   }
-  renderEachCard();
+  offset += renderedAmount;
 }
+
+// pokemonAll.forEach()
 
 function pushPokemonIntoArray(eachPokeData) {
   pokemonAll.push({
@@ -38,13 +42,11 @@ function getPokeInfo(pokeIndex) {
     pokemonAll[pokeIndex].index;
 }
 
-function renderEachCard() {
+function renderEachCard(pokeIndex) {
   const pokedexTargetRef = document.getElementById("pokemonCardsTarget");
-  for (let pokeIndex = 0; pokeIndex < pokemonAll.length; pokeIndex++) {
-    pokedexTargetRef.innerHTML += getCardTemplate(pokeIndex);
-    getPokeInfo(pokeIndex);
-    renderEachCardType(pokeIndex);
-  }
+  pokedexTargetRef.innerHTML += getCardTemplate(pokeIndex);
+  getPokeInfo(pokeIndex);
+  renderEachCardType(pokeIndex);
 }
 
 function renderEachCardType(pokeIndex) {
