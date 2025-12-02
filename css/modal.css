@@ -20,14 +20,21 @@ dialog::backdrop {
 
 .modal-info {
   color: rgb(0, 0, 0);
-  height: 50%;
+  height: 100%;
   width: 100%;
   background-color: #ffffff;
   border-radius: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  font-size: 24px;
+}
+
+.modal-stats-inner {
+  margin-top: 60px;
+  margin-left: 100px;
+  height: 100%;
+  width: 100%;
 }
 
 .modal-main {
@@ -46,6 +53,7 @@ dialog::backdrop {
   justify-content: center;
   align-items: center;
   background-color: #545b5eb4;
+  overflow: hidden;
 }
 
 .modal-header {
@@ -56,6 +64,21 @@ dialog::backdrop {
   justify-content: space-around;
   align-items: center;
   text-align: center;
+}
+
+.footer-modal {
+  height: 40px;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.modal-btn {
+  height: 50px;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: #7f9cdf;
 }
 
 a {

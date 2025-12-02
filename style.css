@@ -114,6 +114,7 @@ input:invalid {
 }
 
 .single-card-header {
+  padding-top: 8px;
   height: 40px;
   width: 80%;
   display: flex;

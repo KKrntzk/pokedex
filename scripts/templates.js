@@ -35,9 +35,9 @@ function getModalTemplate(pokeIndex) {
           </header>
 
           <div class="modal-info-inner-layout" > 
-              <div id="aboutSection" class="display-toggle display-toggle-on ">
-                <p><span>Height</span><span id="height(${pokeIndex})"></span></p>
-                <p><span>Weight</span><span id="weight(${pokeIndex})"></span></p>
+              <div id="aboutSection" class="modal-stats-inner display-toggle display-toggle-on ">
+                <p><span>Height: </span><span id="height(${pokeIndex})"></span>cm</p>
+                <p><span>Weight: </span><span id="weight(${pokeIndex})"></span>g</p>
               </div>
 
               <div id="statSection" class="display-toggle">
@@ -53,9 +53,12 @@ function getModalTemplate(pokeIndex) {
                 <img class="poke-shiny" id="pokeShiny(${pokeIndex})" src=""></img>
               </div>
               </div>
+              <footer class="footer-modal" >
+                    <button class="modal-btn" onclick="goForth(${pokeIndex})">vor</button>
+              <button class="modal-btn" onclick="goBack(${pokeIndex})">zurück</button>
+              </footer>
              </section>
-              <button onclick="goForth(${pokeIndex})">vor</button>
-              <button onclick="goBack(${pokeIndex})">zurück</button>
+        
 
       </section>
      

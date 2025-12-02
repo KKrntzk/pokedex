@@ -3,10 +3,10 @@ let pokemonAll = [];
 let currentPkmns = [];
 //#endregion
 //#region GLOBALS
-const maxPkmnId = 494;
+const maxPkmnId = 493;
 let offset = 387;
 const renderedAmount = 30;
-const limit = 494;
+const limit = 493;
 //#endregion
 function init() {
   fetchPokeData();
@@ -224,7 +224,6 @@ function goForth(pokeIndex) {
     pokeIndex++;
     modal.innerHTML = getModalTemplate(pokeIndex);
   }
-
   renderModal(pokeIndex);
 }
 
@@ -239,7 +238,6 @@ function goBack(pokeIndex) {
     pokeIndex--;
     modal.innerHTML = getModalTemplate(pokeIndex);
   }
-
   renderModal(pokeIndex);
 }
 
