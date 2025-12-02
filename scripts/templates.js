@@ -54,7 +54,10 @@ function getModalTemplate(pokeIndex) {
               </div>
               </div>
              </section>
+              <button onclick="goForth(${pokeIndex})">vor</button>
+              <button onclick="goBack(${pokeIndex})">zurück</button>
 
       </section>
+     
       </div>`;
 }
