@@ -1,43 +1,46 @@
+//#region ARRAYS
 let pokemonAll = [];
-
-function init() {
-  fetchPokeData();
-  console.log(pokemonAll);
-}
-
+let currentPkmns = [];
+//#endregion
+//#region GLOBALS
 let offset = 387;
 const renderedAmount = 30;
 const limit = 494;
+//#endregion
+function init() {
+  fetchPokeData();
+  console.log(pokemonAll);
+  currentPkmns = pokemonAll;
+}
 
 async function fetchPokeData() {
-  if (offset <= limit) {
-    for (let i = offset; i < offset + renderedAmount; i++) {
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
-      const eachPokeData = await response.json();
-      pushPokemonIntoArray(eachPokeData);
-      renderEachCard(pokemonAll.length - 1);
-    }
+  const newOffset = offset + renderedAmount;
+  for (let i = offset; i < newOffset; i++) {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
+    const eachPokeData = await response.json();
+    pushPokemonIntoArray(eachPokeData);
+    renderEachCard(pokemonAll.length - 1);
+    offset++;
   }
-  offset += renderedAmount;
   if (offset >= limit) {
     document.getElementById("loadingBtn").classList.add("display-none");
   }
 }
 
-// pokemonAll.forEach()
-
 function pushPokemonIntoArray(eachPokeData) {
-  pokemonAll.push({
-    name: eachPokeData.name,
-    index: eachPokeData.id,
-    type: eachPokeData.types,
-    sprite: eachPokeData.sprites.front_default,
-    stats: eachPokeData.stats,
-    shiny: eachPokeData.sprites.front_shiny,
-    height: eachPokeData.height,
-    weight: eachPokeData.weight,
-    abilities: eachPokeData.abilities,
-  });
+  if (offset <= limit) {
+    pokemonAll.push({
+      name: eachPokeData.name,
+      index: eachPokeData.id,
+      type: eachPokeData.types,
+      sprite: eachPokeData.sprites.front_default,
+      stats: eachPokeData.stats,
+      shiny: eachPokeData.sprites.front_shiny,
+      height: eachPokeData.height,
+      weight: eachPokeData.weight,
+      abilities: eachPokeData.abilities,
+    });
+  }
 }
 
 function getPokeInfo(pokeIndex) {
@@ -192,4 +195,6 @@ function closeDialog() {
   //   // }
   // });
 }
+//#endregion
+//#region filter
 //#endregion
