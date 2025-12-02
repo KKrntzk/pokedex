@@ -215,8 +215,8 @@ function renderCurrentPkms() {
 //#region arrows
 function goForth(pokeIndex) {
   let modal = document.getElementById(`singleModal`);
-  if (pokeIndex + 1 > pokemonAll.length) {
-    pokeIndex = 0;
+  if (pokeIndex + 1 >= pokemonAll.length) {
+    pokeIndex = pokemonAll.length - pokeIndex - 1;
     modal.innerHTML = "";
     modal.innerHTML = getModalTemplate(pokeIndex);
   } else {
@@ -232,7 +232,7 @@ function goBack(pokeIndex) {
   let modal = document.getElementById(`singleModal`);
   if (pokeIndex - 1 < 0) {
     modal.innerHTML = "";
-    pokeIndex = pokemonAll.length;
+    pokeIndex = pokemonAll.length - 1;
     modal.innerHTML = getModalTemplate(pokeIndex);
   } else {
     modal.innerHTML = "";
