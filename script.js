@@ -214,12 +214,29 @@ function renderCurrentPkms() {
 //#endregion
 //#region arrows
 function goForth(pokeIndex) {
-  if (pokeIndex + 1 > pokemonAll.length - 1) {
+  let modal = document.getElementById(`singleModal`);
+  if (pokeIndex + 1 > pokemonAll.length) {
     pokeIndex = 0;
+    modal.innerHTML = "";
+    modal.innerHTML = getModalTemplate(pokeIndex);
   } else {
-    let modal = document.getElementById(`basicInfo(${pokeIndex})`);
     modal.innerHTML = "";
     pokeIndex++;
+    modal.innerHTML = getModalTemplate(pokeIndex);
+  }
+
+  renderModal(pokeIndex);
+}
+
+function goBack(pokeIndex) {
+  let modal = document.getElementById(`singleModal`);
+  if (pokeIndex - 1 < 0) {
+    modal.innerHTML = "";
+    pokeIndex = pokemonAll.length;
+    modal.innerHTML = getModalTemplate(pokeIndex);
+  } else {
+    modal.innerHTML = "";
+    pokeIndex--;
     modal.innerHTML = getModalTemplate(pokeIndex);
   }
 
