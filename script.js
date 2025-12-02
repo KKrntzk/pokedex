@@ -3,6 +3,7 @@ let pokemonAll = [];
 let currentPkmns = [];
 //#endregion
 //#region GLOBALS
+const maxPkmnId = 494;
 let offset = 387;
 const renderedAmount = 30;
 const limit = 494;
@@ -18,9 +19,11 @@ async function fetchPokeData() {
   for (let i = offset; i < newOffset; i++) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
     const eachPokeData = await response.json();
-    pushPokemonIntoArray(eachPokeData);
-    renderEachCard(pokemonAll.length - 1);
-    offset++;
+    if (eachPokeData.id <= maxPkmnId) {
+      pushPokemonIntoArray(eachPokeData);
+      renderEachCard(pokemonAll.length - 1);
+      offset++;
+    }
   }
   if (offset >= limit) {
     document.getElementById("loadingBtn").classList.add("display-none");
