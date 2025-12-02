@@ -99,7 +99,7 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: beige;
+  background-color: rgba(197, 218, 221, 0.623);
   border-radius: 25px;
   color: white;
   box-shadow: 5px 5px 5px rgb(17, 93, 170);
@@ -107,7 +107,7 @@ input {
 
 .single-cards:hover {
   cursor: pointer;
-  box-shadow: 5px 5px 5px rgb(205, 209, 147);
+  box-shadow: 5px 5px 5px rgb(171, 219, 223);
 }
 
 .single-card-header {

@@ -65,10 +65,11 @@ function renderEachCardType(pokeIndex) {
   let typeTemplate = document.getElementById(`pokeType(${pokeIndex})`);
   for (let j = 0; j < pokemonAll[pokeIndex].type.length; j++) {
     typeTemplate.innerHTML += getTypeTemplate(
+      j,
       pokemonAll[pokeIndex].type[j].type
     );
     document
-      .getElementById(`singleCard(${pokeIndex})`)
+      .getElementById(`pokeTypeColor(${j})`)
       .classList.add(`type-${pokemonAll[pokeIndex].type[j].type.name}`);
   }
   document

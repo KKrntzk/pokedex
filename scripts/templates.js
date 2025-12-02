@@ -9,9 +9,9 @@ function getCardTemplate(pokeIndex) {
     `;
 }
 
-function getTypeTemplate(type) {
+function getTypeTemplate(j, type) {
   return /*html*/ `
-        <p id="" class="poke-type">${type.name}</p>
+        <p id="pokeTypeColor(${j})" class="poke-type type-${type.name}">${type.name}</p>
     `;
 }
 
