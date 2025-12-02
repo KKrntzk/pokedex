@@ -61,6 +61,10 @@ input {
   border-radius: 15px;
 }
 
+input:invalid {
+  border: 2px dashed red;
+}
+
 .search-btn {
   height: 50px;
   border-radius: 15px;

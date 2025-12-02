@@ -194,9 +194,21 @@ function closeDialog() {
 }
 //#endregion
 //#region filter
-function searchInputValue() {}
+function searchInputValue() {
+  const soughtPkmn = document.getElementById("searchBar").value;
+  filterThroughCurrentPkmn(soughtPkmn);
+}
 
 function filterThroughCurrentPkmn(filterPkmn) {
-  currentPkmns.filter((element) => element.includes(filterPkmn));
+  currentPkmns = pokemonAll.filter((element) =>
+    element.name.includes(filterPkmn)
+  );
+  console.log(currentPkmns);
+  const contentRef = document.getElementById("pokemonCardsTarget");
+  contentRef.innerHTML = "";
+
+  // renderCurrentPkms();
 }
+
+function renderCurrentPkms() {}
 //#endregion
