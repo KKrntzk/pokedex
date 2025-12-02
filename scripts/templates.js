@@ -19,12 +19,18 @@ function getModalTemplate(pokeIndex) {
   return `<div id="eachModal(${pokeIndex})" class="">
             <section class="modal-basic" id="basicInfo(${pokeIndex})">
             <section class="modal-main">
-          <header class="single-card-header">
+          <header class="modal-single-card-header">
             <div># <span id="pokeModalId(${pokeIndex})"></span></div>
           </header>    
-            <span class="poke-name"  id="pokeModalName(${pokeIndex})"></span>
-            <img class="poke-sprite" id="pokeModalSprite(${pokeIndex})" src=""></img>    
-            <p id="pokeModalType(${pokeIndex})"></p>
+            <div class="outer-shell">
+            <div>
+            <span class="modal-poke-name"  id="pokeModalName(${pokeIndex})"></span>            
+            <div id="pokeModalType(${pokeIndex})" class="modal-type-container"></div>
+            </div>
+            <div> 
+            <img class="modal-poke-sprite" id="pokeModalSprite(${pokeIndex})" src=""></img> 
+            </div>  
+            </div> 
             </section>
 
            <section class="modal-info" id="modalInfo">
@@ -40,22 +46,22 @@ function getModalTemplate(pokeIndex) {
                 <p><span>Weight: </span><span id="weight(${pokeIndex})"></span>g</p>
               </div>
 
-              <div id="statSection" class="display-toggle">
-                <p><span>HP</span><span id="hp(${pokeIndex})"></span></p>
-                <p><span>Attack</span><span id="attack(${pokeIndex})"></span></p>
-                <p><span>Defense</span><span id="defense(${pokeIndex})"></span></p>
-                <p><span>Special Attack</span><span id="spAttack(${pokeIndex})"></span></p>
-                <p><span>Special Defense</span><span id="spDefense(${pokeIndex})"></span></p>
-                <p><span>Speed</span><span id="speed(${pokeIndex})"></span></p>
+              <div id="statSection" class="modal-stats-inner display-toggle">
+                <p><span>HP: </span><span id="hp(${pokeIndex})"></span></p>
+                <p><span>Attack: </span><span id="attack(${pokeIndex})"></span></p>
+                <p><span>Defense: </span><span id="defense(${pokeIndex})"></span></p>
+                <p><span>Special Attack: </span><span id="spAttack(${pokeIndex})"></span></p>
+                <p><span>Special Defense: </span><span id="spDefense(${pokeIndex})"></span></p>
+                <p><span>Speed: </span><span id="speed(${pokeIndex})"></span></p>
               </div>
 
-              <div id="shinySection" class="display-toggle">
-                <img class="poke-shiny" id="pokeShiny(${pokeIndex})" src=""></img>
+              <div id="shinySection" class=" display-toggle">
+                <img class="modal-poke-shiny" id="pokeShiny(${pokeIndex})" src=""></img>
               </div>
               </div>
               <footer class="footer-modal" >
-                    <button class="modal-btn" onclick="goForth(${pokeIndex})">vor</button>
-              <button class="modal-btn" onclick="goBack(${pokeIndex})">zurück</button>
+                <button class="modal-left-btn" onclick="goForth(${pokeIndex})"></button>
+                <button class="modal-right-btn" onclick="goBack(${pokeIndex})"></button>
               </footer>
              </section>
         

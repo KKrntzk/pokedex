@@ -1,7 +1,7 @@
 .modal-layout {
   font-family: "Roboto Flex";
-  height: 1200px;
-  width: 700px;
+  height: 800px;
+  width: 600px;
   border-radius: 50px;
   color: white;
   border: none;
@@ -38,6 +38,7 @@ dialog::backdrop {
 }
 
 .modal-main {
+  width: 100%;
   height: 50%;
   display: flex;
   flex-direction: column;
@@ -45,8 +46,19 @@ dialog::backdrop {
   align-items: center;
 }
 
+.outer-shell {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.modal-poke-shiny {
+  height: 300px;
+  width: 300px;
+}
+
 .modal-basic {
-  height: 1200px;
+  height: 800px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -66,6 +78,34 @@ dialog::backdrop {
   text-align: center;
 }
 
+.modal-single-card-header {
+  padding-top: 8px;
+  height: 40px;
+  width: 80%;
+  display: flex;
+  justify-content: end;
+  align-items: start;
+  font-weight: bold;
+}
+
+.modal-poke-name {
+  height: 40px;
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgb(32, 29, 29);
+}
+
+.modal-poke-sprite {
+  height: 300px;
+  width: 300px;
+  object-fit: contain;
+  margin: -16px 0;
+}
+
+.modal-type-container {
+  display: flex;
+}
+
 .footer-modal {
   height: 40px;
   width: 80%;
@@ -74,11 +114,20 @@ dialog::backdrop {
   margin-bottom: 40px;
 }
 
-.modal-btn {
-  height: 50px;
-  border-radius: 15px;
-  padding: 15px;
+.modal-left-btn {
+  height: 70px;
+  border-radius: 50px;
+  padding: 10px;
   background-color: #7f9cdf;
+  background-image: url("");
+}
+
+.modal-right-btn {
+  height: 70px;
+  border-radius: 50px;
+  padding: 10px;
+  background-color: #7f9cdf;
+  background-image: url("");
 }
 
 a {
