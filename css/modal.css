@@ -45,6 +45,7 @@ dialog::backdrop {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #545b5eb4;
 }
 
 .modal-header {

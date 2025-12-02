@@ -4,14 +4,14 @@ function getCardTemplate(pokeIndex) {
     <header class="single-card-header"><div># <span id="pokeId(${pokeIndex})"></span></div></header>    
     <span class="poke-name"  id="pokeName(${pokeIndex})"></span>
     <img class="poke-sprite" id="pokeSprite(${pokeIndex})" src=""></img>    
-    <p id="pokeType(${pokeIndex})"></p>
+    <div id="pokeType(${pokeIndex})" class="type-container"></div>
     </div>
     `;
 }
 
-function getTypeTemplate(j, type) {
+function getTypeTemplate(type) {
   return /*html*/ `
-        <p id="pokeTypeColor(${j})" class="poke-type type-${type.name}">${type.name}</p>
+        <p class="poke-type type-${type.name}">${type.name}</p>
     `;
 }
 

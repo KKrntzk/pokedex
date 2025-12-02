@@ -21,7 +21,7 @@ async function fetchPokeData() {
     const eachPokeData = await response.json();
     if (eachPokeData.id <= maxPkmnId) {
       pushPokemonIntoArray(eachPokeData);
-      renderEachCard(pokemonAll.length - 1);
+      renderEachCard(i - 387);
       offset++;
     }
   }
@@ -65,12 +65,8 @@ function renderEachCardType(pokeIndex) {
   let typeTemplate = document.getElementById(`pokeType(${pokeIndex})`);
   for (let j = 0; j < pokemonAll[pokeIndex].type.length; j++) {
     typeTemplate.innerHTML += getTypeTemplate(
-      j,
       pokemonAll[pokeIndex].type[j].type
     );
-    document
-      .getElementById(`pokeTypeColor(${j})`)
-      .classList.add(`type-${pokemonAll[pokeIndex].type[j].type.name}`);
   }
   document
     .getElementById(`pokeSprite(${pokeIndex})`)
@@ -88,9 +84,6 @@ function getPokeModalInfo(pokeIndex) {
     typeTemplate.innerHTML += getTypeTemplate(
       pokemonAll[pokeIndex].type[j].type
     );
-    document
-      .getElementById(`eachModal(${pokeIndex})`)
-      .classList.add(`type-${pokemonAll[pokeIndex].type[j].type.name}`);
   }
   document
     .getElementById(`pokeModalSprite(${pokeIndex})`)
@@ -201,4 +194,9 @@ function closeDialog() {
 }
 //#endregion
 //#region filter
+function searchInputValue() {}
+
+function filterThroughCurrentPkmn(filterPkmn) {
+  currentPkmns.filter((element) => element.includes(filterPkmn));
+}
 //#endregion
