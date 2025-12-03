@@ -193,17 +193,27 @@ function closeDialog() {
 //#region filter
 function searchInputValue() {
   const soughtPkmn = document.getElementById("searchBar").value;
-  filterThroughCurrentPkmn(soughtPkmn);
+  if (soughtPkmn.length >= 3) {
+    filterThroughCurrentPkmn(soughtPkmn);
+  } else {
+    const feedbackRef = document.getElementById("searchFeedback");
+    feedbackRef.innerHTML = "please use at least 3 characters";
+  }
 }
 
 function filterThroughCurrentPkmn(filterPkmn) {
   currentPkmns = pokemonAll.filter((element) =>
     element.name.includes(filterPkmn)
   );
-  console.log(currentPkmns);
-  const contentRef = document.getElementById("pokemonCardsTarget");
-  contentRef.innerHTML = "";
-  renderCurrentPkms();
+  const feedbackRef = document.getElementById("searchFeedback");
+  if (currentPkmns.length === 0) {
+    feedbackRef.innerHTML = "no matches found";
+  } else {
+    console.log(currentPkmns);
+    const contentRef = document.getElementById("pokemonCardsTarget");
+    contentRef.innerHTML = "";
+    renderCurrentPkms();
+  }
 }
 
 function renderCurrentPkms() {

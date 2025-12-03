@@ -61,8 +61,10 @@ input {
   border-radius: 15px;
 }
 
-input:invalid {
-  border: 2px dashed red;
+.feedback {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #d9534f;
 }
 
 .search-btn {
