@@ -225,20 +225,6 @@ function renderCurrentPkms() {
 //#region arrows
 function goForth(pokeIndex) {
   let modal = document.getElementById(`singleModal`);
-  if (pokeIndex + 1 >= pokemonAll.length) {
-    pokeIndex = pokemonAll.length - pokeIndex - 1;
-    modal.innerHTML = "";
-    modal.innerHTML = getModalTemplate(pokeIndex);
-  } else {
-    modal.innerHTML = "";
-    pokeIndex++;
-    modal.innerHTML = getModalTemplate(pokeIndex);
-  }
-  renderModal(pokeIndex);
-}
-
-function goBack(pokeIndex) {
-  let modal = document.getElementById(`singleModal`);
   if (pokeIndex - 1 < 0) {
     modal.innerHTML = "";
     pokeIndex = pokemonAll.length - 1;
@@ -246,6 +232,20 @@ function goBack(pokeIndex) {
   } else {
     modal.innerHTML = "";
     pokeIndex--;
+    modal.innerHTML = getModalTemplate(pokeIndex);
+  }
+  renderModal(pokeIndex);
+}
+
+function goBack(pokeIndex) {
+  let modal = document.getElementById(`singleModal`);
+  if (pokeIndex + 1 >= pokemonAll.length) {
+    pokeIndex = pokemonAll.length - pokeIndex - 1;
+    modal.innerHTML = "";
+    modal.innerHTML = getModalTemplate(pokeIndex);
+  } else {
+    modal.innerHTML = "";
+    pokeIndex++;
     modal.innerHTML = getModalTemplate(pokeIndex);
   }
   renderModal(pokeIndex);
