@@ -14,16 +14,8 @@ function init() {
   currentPkmns = pokemonAll;
 }
 
-function landingPage() {
-  const pokedexTargetRef = document.getElementById("pokemonCardsTarget");
-  pokedexTargetRef.innerHTML = "";
-  currentPkmns.splice(30, Infinity);
-  currentPkmns.forEach((element, index) => {
-    renderEachCard(currentPkmns, index);
-  });
-}
-
 async function fetchPokeData() {
+  openLoadingscreen();
   const newOffset = offset + renderedAmount;
   for (let i = offset; i < newOffset; i++) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
@@ -37,6 +29,7 @@ async function fetchPokeData() {
   if (offset >= limit) {
     document.getElementById("loadingBtn").classList.add("display-none");
   }
+  closeLoadingscreen();
 }
 
 function pushPokemonIntoArray(eachPokeData) {
@@ -194,6 +187,7 @@ function bubblingPrevention(event) {
 function closeDialog() {
   const dialogRef = document.getElementById(`singleModal`);
   dialogRef.close();
+  document.body.classList.remove("noscroll");
 }
 //#endregion
 //#region filter
@@ -247,4 +241,17 @@ function goBack(pokeIndex) {
   renderModal(pokeIndex);
 }
 
+//#endregion
+//#region loadingsreen
+function openLoadingscreen() {
+  const loadingscreenRef = document.getElementById("loadingDialog");
+  loadingscreenRef.classList.add("loading-overlay");
+  loadingscreenRef.showModal();
+}
+
+function closeLoadingscreen() {
+  const loadingscreenRef = document.getElementById("loadingDialog");
+  loadingscreenRef.classList.remove("loading-overlay");
+  loadingscreenRef.close();
+}
 //#endregion
