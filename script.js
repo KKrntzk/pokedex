@@ -11,13 +11,12 @@ const limit = 493;
 //#endregion
 function init() {
   fetchPokeData();
-  console.log(pokemonAll);
   currentPkmns = pokemonAll;
 }
 
-function fetchPokeData() {
+async function fetchPokeData() {
   openLoadingscreen(); 
-  fetchData();
+  await fetchData();
   closeLoadingscreen();
 }
 
@@ -85,13 +84,11 @@ function getPokeModalInfo(pokeIndex) {
   }
 
 function renderModal(pokeIndex) {
-  document.getElementById(`singleCard(${pokeIndex})`);
   renderStatInfo(pokeIndex);
   renderShiny(pokeIndex);
   renderAboutSection(pokeIndex);
   let modalBasicInfoRef = document.getElementById(`basicInfo(${pokeIndex})`);
   modalBasicInfoRef = getPokeModalInfo(pokeIndex);
-  // renderAbilities(pokeIndex);
 }
 
 function renderStatInfo(pokeIndex) {
@@ -111,12 +108,6 @@ function renderShiny(pokeIndex) {
 function renderAboutSection(pokeIndex) {
   document.getElementById(`height(${pokeIndex})`).innerHTML = currentPkmns[pokeIndex].height;
   document.getElementById(`weight(${pokeIndex})`).innerHTML = currentPkmns[pokeIndex].weight;
-}
-
-function renderAbilities(pokeIndex) {
-  for (let k = 0; k < array.length; k++) {
-    document.getElementById(`abilities(${pokeIndex})`).innerHTML += currentPkmns[pokeindex].abilities[k].ability.name;
-  }
 }
 
 function toggleShiny() {

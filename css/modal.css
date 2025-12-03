@@ -123,8 +123,6 @@ dialog::backdrop {
   background-color: #7f9cdf;
   background-image: url("../assets/img/left.png");
   background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .modal-right-btn {
@@ -135,8 +133,6 @@ dialog::backdrop {
   background-color: #7f9cdf;
   background-image: url("../assets/img/right.png");
   background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 a {

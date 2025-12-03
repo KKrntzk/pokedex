@@ -279,12 +279,9 @@ input {
   height: 80px;
   width: 80px;
   border-radius: 50px;
-  padding: 10px;
   background-color: #2b85ed;
   background-image: url("../assets/img/search.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-size: cover;
   display: none;
 }
 
@@ -335,11 +332,33 @@ input {
 }
 
 @media(max-width: 700px){
-.search-bar {
-  display: none;
+  .logo-img {
+    height: 80px;
+}
+input {
+    height: 40px;
+    width: 200px;
 }
 
-.mobile-btn{
-  display: block;
+.search-btn {
+    height: 40px;    
+    padding: 10px;
+} 
+}
+
+@media(max-width: 430px){
+  .main-header {
+    flex-direction: column;
+    padding-top: 10px;
+    gap: 10px;
+}
+
+.main-footer{
+  justify-content: center;
+}
+
+.search-bar {
+ width: 300px;
 }
 }
+
