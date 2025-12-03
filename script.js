@@ -32,6 +32,7 @@ async function fetchData(){
       offset++;
     }
   }
+
   if (offset >= limit) {
     document.getElementById("loadingBtn").classList.add("display-none");
   }
@@ -181,13 +182,15 @@ function searchInputValue() {
   } else {
     const feedbackRef = document.getElementById("searchFeedback");
     feedbackRef.innerHTML = "please use at least 3 characters";
+     const contentRef = document.getElementById("pokemonCardsTarget");
+    contentRef.innerHTML = "";
   }
   document.getElementById("loadingBtn").classList.add("display-none");
 }
 
 function filterThroughCurrentPkmn(filterPkmn) {
   currentPkmns = pokemonAll.filter((element) =>
-    element.name.includes(filterPkmn)
+    element.name.includes(filterPkmn.toLowerCase())
   );
   const feedbackRef = document.getElementById("searchFeedback");
   if (currentPkmns.length === 0) {
