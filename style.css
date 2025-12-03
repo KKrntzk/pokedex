@@ -63,6 +63,7 @@ main {
   height: 200px;
   width: 800px;
   gap: 15px;
+  justify-content: space-around;
 }
 
 .align-search-btn {
@@ -272,4 +273,36 @@ input {
 
 .display-none {
   display: none;
+}
+
+@media(max-width: 1380px){
+.search-bar {    
+  height: 200px;
+  width: 600px;   
+}
+
+.logo-text {
+  height: 60px;
+  width: 400px;
+}
+}
+
+@media(max-width: 1200px){
+.logo-text {
+  display: none;
+}
+}
+
+@media(max-width: 800px){
+    .search-bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 700px){
+    .search-bar {
+        display: none;
+    }
 }

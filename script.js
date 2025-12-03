@@ -195,6 +195,8 @@ function filterThroughCurrentPkmn(filterPkmn) {
   const feedbackRef = document.getElementById("searchFeedback");
   if (currentPkmns.length === 0) {
     feedbackRef.innerHTML = "no matches found";
+    const contentRef = document.getElementById("pokemonCardsTarget");
+    contentRef.innerHTML = "";
   } else {
     console.log(currentPkmns);
     const contentRef = document.getElementById("pokemonCardsTarget");
