@@ -74,10 +74,10 @@ function renderEachCardType(arr, pokeIndex) {
 //#region modal
 function getPokeModalInfo(pokeIndex) {
   document.getElementById(`pokeModalName(${pokeIndex})`).innerHTML =
-    pokemonAll[pokeIndex].name.charAt(0).toUpperCase() +
-    pokemonAll[pokeIndex].name.substr(1);
+    currentPkmns[pokeIndex].name.charAt(0).toUpperCase() +
+    currentPkmns[pokeIndex].name.substr(1);
   document.getElementById(`pokeModalId(${pokeIndex})`).innerHTML =
-    pokemonAll[pokeIndex].index;
+    currentPkmns[pokeIndex].index;
   let typeTemplate = document.getElementById(`pokeModalType(${pokeIndex})`);
   for (let j = 0; j < pokemonAll[pokeIndex].type.length; j++) {
     typeTemplate.innerHTML += getTypeTemplate(
@@ -86,7 +86,7 @@ function getPokeModalInfo(pokeIndex) {
   }
   document
     .getElementById(`pokeModalSprite(${pokeIndex})`)
-    .setAttribute("src", pokemonAll[pokeIndex].sprite);
+    .setAttribute("src", currentPkmns[pokeIndex].sprite);
 }
 
 function renderModal(pokeIndex) {
@@ -100,7 +100,7 @@ function renderModal(pokeIndex) {
 }
 
 function renderStatInfo(pokeIndex) {
-  const pokeStats = pokemonAll[pokeIndex].stats;
+  const pokeStats = currentPkmns[pokeIndex].stats;
   document.getElementById(`hp(${pokeIndex})`).innerHTML =
     pokeStats[0].base_stat;
   document.getElementById(`attack(${pokeIndex})`).innerHTML =
@@ -118,20 +118,20 @@ function renderStatInfo(pokeIndex) {
 function renderShiny(pokeIndex) {
   document
     .getElementById(`pokeShiny(${pokeIndex})`)
-    .setAttribute("src", pokemonAll[pokeIndex].shiny);
+    .setAttribute("src", currentPkmns[pokeIndex].shiny);
 }
 
 function renderAboutSection(pokeIndex) {
   document.getElementById(`height(${pokeIndex})`).innerHTML =
-    pokemonAll[pokeIndex].height;
+    currentPkmns[pokeIndex].height;
   document.getElementById(`weight(${pokeIndex})`).innerHTML =
-    pokemonAll[pokeIndex].weight;
+    currentPkmns[pokeIndex].weight;
 }
 
 function renderAbilities(pokeIndex) {
   for (let k = 0; k < array.length; k++) {
     document.getElementById(`abilities(${pokeIndex})`).innerHTML +=
-      pokemonAll[pokeindex].abilities[k].ability.name;
+      currentPkmns[pokeindex].abilities[k].ability.name;
   }
 }
 

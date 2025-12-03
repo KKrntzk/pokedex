@@ -42,8 +42,8 @@ function getModalTemplate(pokeIndex) {
 
           <div class="modal-info-inner-layout" > 
               <div id="aboutSection" class="modal-stats-inner display-toggle display-toggle-on ">
-                <p><span>Height: </span><span id="height(${pokeIndex})"></span>cm</p>
-                <p><span>Weight: </span><span id="weight(${pokeIndex})"></span>g</p>
+                <p><span>Height: </span><span id="height(${pokeIndex})"></span> cm</p>
+                <p><span>Weight: </span><span id="weight(${pokeIndex})"></span> g</p>
               </div>
 
               <div id="statSection" class="modal-stats-inner display-toggle">

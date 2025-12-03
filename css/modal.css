@@ -116,18 +116,26 @@ dialog::backdrop {
 
 .modal-left-btn {
   height: 70px;
+  width: 70px;
   border-radius: 50px;
   padding: 10px;
   background-color: #7f9cdf;
-  background-image: url("");
+  background-image: url("../assets/img/left.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .modal-right-btn {
   height: 70px;
+  width: 70px;
   border-radius: 50px;
   padding: 10px;
   background-color: #7f9cdf;
-  background-image: url("");
+  background-image: url("../assets/img/right.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 a {
