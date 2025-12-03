@@ -1,6 +1,6 @@
 function getCardTemplate(pokeIndex) {
   return /*html*/ `
-    <div onclick="openDialog(${pokeIndex})" id="singleCard(${pokeIndex})" class="single-cards">   
+    <div onclick="bubblingPrevention(event), openDialog(${pokeIndex})" id="singleCard(${pokeIndex})" class="single-cards">   
     <header class="single-card-header"><div># <span id="pokeId(${pokeIndex})"></span></div></header>    
     <span class="poke-name"  id="pokeName(${pokeIndex})"></span>
     <img class="poke-sprite" id="pokeSprite(${pokeIndex})" src=""></img>    
@@ -16,7 +16,7 @@ function getTypeTemplate(type) {
 }
 
 function getModalTemplate(pokeIndex) {
-  return `<div id="eachModal(${pokeIndex})" class="">
+  return `<div onclick="bubblingPrevention(event)" id="eachModal(${pokeIndex})" class="">
             <section class="modal-basic" id="basicInfo(${pokeIndex})">
             <section class="modal-main">
           <header class="modal-single-card-header">
@@ -35,9 +35,9 @@ function getModalTemplate(pokeIndex) {
 
            <section class="modal-info" id="modalInfo">
           <header class="modal-header">
-            <a class="underline" id="aboutRef" onclick="toggleAbout()" href="#">About</a>
-            <a id="statRef" onclick="toggleStats()" href="#">Base Stats</a>
-            <a id="shinyRef" onclick="toggleShiny()" href="#">Shiny</a>
+            <a class="underline" id="aboutRef" onclick="bubblingPrevention(event), toggleAbout()" href="#">About</a>
+            <a id="statRef" onclick="bubblingPrevention(event), toggleStats()" href="#">Base Stats</a>
+            <a id="shinyRef" onclick="bubblingPrevention(event), toggleShiny()" href="#">Shiny</a>
           </header>
 
           <div class="modal-info-inner-layout" > 
@@ -60,8 +60,8 @@ function getModalTemplate(pokeIndex) {
               </div>
               </div>
               <footer class="footer-modal" >
-                <button class="modal-left-btn" onclick="goForth(${pokeIndex})"></button>
-                <button class="modal-right-btn" onclick="goBack(${pokeIndex})"></button>
+                <button class="modal-left-btn" onclick="bubblingPrevention(event), goForth(${pokeIndex})"></button>
+                <button class="modal-right-btn" onclick="bubblingPrevention(event), goBack(${pokeIndex})"></button>
               </footer>
              </section>
         

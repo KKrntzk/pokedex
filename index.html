@@ -15,9 +15,14 @@
     <script src="./scripts/templates.js"></script>
     <script src="./script.js"></script>
   </head>
-  <body onload="init()">
+  <body onclick="closeDialog()" onload="init()">
     <header class="main-header">
-      <img class="logo-img" src="./assets/img/logo/logo.png" alt="" />
+      <img
+        class="logo-img"
+        src="./assets/img/logo/logo.png"
+        alt=""
+        onclick="landingPage() "
+      />
       <div class="search-bar">
         <input id="searchBar" minlength="3" type="text" required />
         <button onclick="searchInputValue()" class="search-btn">search</button>

@@ -14,6 +14,15 @@ function init() {
   currentPkmns = pokemonAll;
 }
 
+function landingPage() {
+  const pokedexTargetRef = document.getElementById("pokemonCardsTarget");
+  pokedexTargetRef.innerHTML = "";
+  currentPkmns.splice(30, Infinity);
+  currentPkmns.forEach((element, index) => {
+    renderEachCard(currentPkmns, index);
+  });
+}
+
 async function fetchPokeData() {
   const newOffset = offset + renderedAmount;
   for (let i = offset; i < newOffset; i++) {
@@ -178,16 +187,13 @@ function openDialog(pokeIndex) {
   document.body.classList.add("noscroll");
 }
 
+function bubblingPrevention(event) {
+  event.stopPropagation();
+}
+
 function closeDialog() {
   const dialogRef = document.getElementById(`singleModal`);
   dialogRef.close();
-  // dialogRef.addEventListener("click", (event) => {
-  //   console.log(event.target);
-
-  //   // if (event.target == dialogRef) {
-  //   //   dialogRef.closest();
-  //   // }
-  // });
 }
 //#endregion
 //#region filter
