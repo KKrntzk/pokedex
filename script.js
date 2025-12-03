@@ -180,10 +180,10 @@ function searchInputValue() {
 }
 
 function filterThroughCurrentPkmn(filterPkmn) {
+  const feedbackRef = document.getElementById("searchFeedback");
   currentPkmns = pokemonAll.filter((element) =>
     element.name.includes(filterPkmn.toLowerCase())
-  );
-  const feedbackRef = document.getElementById("searchFeedback");
+  );  
   if (currentPkmns.length === 0) {
     feedbackRef.innerHTML = "no matches found";
     const contentRef = document.getElementById("pokemonCardsTarget");
@@ -191,6 +191,7 @@ function filterThroughCurrentPkmn(filterPkmn) {
   } else {
     console.log(currentPkmns);
     const contentRef = document.getElementById("pokemonCardsTarget");
+    feedbackRef.innerHTML = "";
     contentRef.innerHTML = "";
     renderCurrentPkms();
   }
@@ -230,7 +231,6 @@ function goBack(pokeIndex) {
   }
   renderModal(pokeIndex);
 }
-
 //#endregion
 //#region loadingsreen
 function openLoadingscreen() {
