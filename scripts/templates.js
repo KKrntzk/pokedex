@@ -63,17 +63,17 @@ function getModalTemplate(pokeIndex) {
 
           <div class="modal-info-inner-layout"> 
             <div id="aboutSection" class="modal-stats-inner display-toggle display-toggle-on">
-              <p><span>Height: </span><span id="height(${pokeIndex})"></span> cm</p>
-              <p><span>Weight: </span><span id="weight(${pokeIndex})"></span> g</p>
+              <p><span><strong>Height:</strong></span><span id="height(${pokeIndex})"></span> cm</p>
+              <p><span><strong>Weight:</strong></span><span id="weight(${pokeIndex})"></span> g</p>
             </div>
 
             <div id="statSection" class="modal-stats-inner display-toggle">
-              <p><span>HP: </span><span id="hp(${pokeIndex})"></span></p>
-              <p><span>Attack: </span><span id="attack(${pokeIndex})"></span></p>
-              <p><span>Defense: </span><span id="defense(${pokeIndex})"></span></p>
-              <p><span>Special Attack: </span><span id="spAttack(${pokeIndex})"></span></p>
-              <p><span>Special Defense: </span><span id="spDefense(${pokeIndex})"></span></p>
-              <p><span>Speed: </span><span id="speed(${pokeIndex})"></span></p>
+              <p><span><strong>HP:</strong></span><span id="hp(${pokeIndex})"></span></p>
+              <p><span><strong>Attack:</strong></span><span id="attack(${pokeIndex})"></span></p>
+              <p><span><strong>Defense:</strong> </span><span id="defense(${pokeIndex})"></span></p>
+              <p><span><strong>Special Attack:</strong> </span><span id="spAttack(${pokeIndex})"></span></p>
+              <p><span><strong>Special Defense:</strong></span><span id="spDefense(${pokeIndex})"></span></p>
+              <p><span><strong>Speed:</strong> </span><span id="speed(${pokeIndex})"></span></p>
             </div>
 
             <div id="shinySection" class="display-toggle">
