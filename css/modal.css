@@ -170,3 +170,30 @@ body.noscroll {
   align-items: center;
   flex-direction: column;
 }
+
+@media(max-width:700px){
+  .modal-layout {  
+    width: 400px;
+}
+.modal-poke-sprite {
+    height: 200px;
+    width: 200px;
+}
+.modal-header {
+    font-size: 22px;
+}
+
+.modal-stats-inner {
+    font-size: 18px;
+}
+
+.modal-right-btn {
+    height: 50px;
+    width: 50px;
+}
+
+.modal-left-btn {
+     height: 50px;
+    width: 50px;
+}
+}
