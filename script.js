@@ -7,6 +7,7 @@ const maxPkmnId = 493;
 let offset = 387;
 const renderedAmount = 30;
 const limit = 493;
+
 //#endregion
 function init() {
   fetchPokeData();
@@ -49,10 +50,8 @@ function pushPokemonIntoArray(eachPokeData) {
 }
 
 function getPokeInfo(arr, pokeIndex) {
-  document.getElementById(`pokeName(${pokeIndex})`).innerHTML =
-    arr[pokeIndex].name.charAt(0).toUpperCase() + arr[pokeIndex].name.substr(1);
-  document.getElementById(`pokeId(${pokeIndex})`).innerHTML =
-    arr[pokeIndex].index;
+  document.getElementById(`pokeName(${pokeIndex})`).innerHTML = arr[pokeIndex].name.charAt(0).toUpperCase() + arr[pokeIndex].name.substr(1);
+  document.getElementById(`pokeId(${pokeIndex})`).innerHTML = arr[pokeIndex].index;
 }
 
 function renderEachCard(arr, pokeIndex) {
@@ -67,27 +66,18 @@ function renderEachCardType(arr, pokeIndex) {
   for (let j = 0; j < arr[pokeIndex].type.length; j++) {
     typeTemplate.innerHTML += getTypeTemplate(arr[pokeIndex].type[j].type);
   }
-  document
-    .getElementById(`pokeSprite(${pokeIndex})`)
-    .setAttribute("src", arr[pokeIndex].sprite);
+  document.getElementById(`pokeSprite(${pokeIndex})`).setAttribute("src", arr[pokeIndex].sprite);
 }
 //#region modal
 function getPokeModalInfo(pokeIndex) {
-  document.getElementById(`pokeModalName(${pokeIndex})`).innerHTML =
-    currentPkmns[pokeIndex].name.charAt(0).toUpperCase() +
-    currentPkmns[pokeIndex].name.substr(1);
-  document.getElementById(`pokeModalId(${pokeIndex})`).innerHTML =
-    currentPkmns[pokeIndex].index;
+  document.getElementById(`pokeModalName(${pokeIndex})`).innerHTML = currentPkmns[pokeIndex].name.charAt(0).toUpperCase() + currentPkmns[pokeIndex].name.substr(1);
+  document.getElementById(`pokeModalId(${pokeIndex})`).innerHTML = currentPkmns[pokeIndex].index;
   let typeTemplate = document.getElementById(`pokeModalType(${pokeIndex})`);
   for (let j = 0; j < pokemonAll[pokeIndex].type.length; j++) {
-    typeTemplate.innerHTML += getTypeTemplate(
-      pokemonAll[pokeIndex].type[j].type
-    );
+    typeTemplate.innerHTML += getTypeTemplate(pokemonAll[pokeIndex].type[j].type);
   }
-  document
-    .getElementById(`pokeModalSprite(${pokeIndex})`)
-    .setAttribute("src", currentPkmns[pokeIndex].sprite);
-}
+  document.getElementById(`pokeModalSprite(${pokeIndex})`).setAttribute("src", currentPkmns[pokeIndex].sprite);
+  }
 
 function renderModal(pokeIndex) {
   document.getElementById(`singleCard(${pokeIndex})`);
@@ -101,37 +91,26 @@ function renderModal(pokeIndex) {
 
 function renderStatInfo(pokeIndex) {
   const pokeStats = currentPkmns[pokeIndex].stats;
-  document.getElementById(`hp(${pokeIndex})`).innerHTML =
-    pokeStats[0].base_stat;
-  document.getElementById(`attack(${pokeIndex})`).innerHTML =
-    pokeStats[1].base_stat;
-  document.getElementById(`defense(${pokeIndex})`).innerHTML =
-    pokeStats[2].base_stat;
-  document.getElementById(`spAttack(${pokeIndex})`).innerHTML =
-    pokeStats[3].base_stat;
-  document.getElementById(`spDefense(${pokeIndex})`).innerHTML =
-    pokeStats[4].base_stat;
-  document.getElementById(`speed(${pokeIndex})`).innerHTML =
-    pokeStats[5].base_stat;
+  document.getElementById(`hp(${pokeIndex})`).innerHTML = pokeStats[0].base_stat;
+  document.getElementById(`attack(${pokeIndex})`).innerHTML = pokeStats[1].base_stat;
+  document.getElementById(`defense(${pokeIndex})`).innerHTML = pokeStats[2].base_stat;
+  document.getElementById(`spAttack(${pokeIndex})`).innerHTML = pokeStats[3].base_stat;
+  document.getElementById(`spDefense(${pokeIndex})`).innerHTML = pokeStats[4].base_stat;
+  document.getElementById(`speed(${pokeIndex})`).innerHTML = pokeStats[5].base_stat;
 }
 
 function renderShiny(pokeIndex) {
-  document
-    .getElementById(`pokeShiny(${pokeIndex})`)
-    .setAttribute("src", currentPkmns[pokeIndex].shiny);
+  document.getElementById(`pokeShiny(${pokeIndex})`).setAttribute("src", currentPkmns[pokeIndex].shiny);
 }
 
 function renderAboutSection(pokeIndex) {
-  document.getElementById(`height(${pokeIndex})`).innerHTML =
-    currentPkmns[pokeIndex].height;
-  document.getElementById(`weight(${pokeIndex})`).innerHTML =
-    currentPkmns[pokeIndex].weight;
+  document.getElementById(`height(${pokeIndex})`).innerHTML = currentPkmns[pokeIndex].height;
+  document.getElementById(`weight(${pokeIndex})`).innerHTML = currentPkmns[pokeIndex].weight;
 }
 
 function renderAbilities(pokeIndex) {
   for (let k = 0; k < array.length; k++) {
-    document.getElementById(`abilities(${pokeIndex})`).innerHTML +=
-      currentPkmns[pokeindex].abilities[k].ability.name;
+    document.getElementById(`abilities(${pokeIndex})`).innerHTML += currentPkmns[pokeindex].abilities[k].ability.name;
   }
 }
 
