@@ -15,11 +15,20 @@
   src: url("./fonts/roboto-flex-v30-latin-regular.woff2") format("woff2");
 }
 
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #6A7DF0;
+}
+
 button:hover {
   cursor: pointer;
 }
 
 main {
+  max-width: 1920px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,6 +40,8 @@ main {
 }
 
 .main-content {
+  max-width: 1920px;
+  width: 100%;
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -79,6 +90,8 @@ input {
 
 .main-header {
   height: 200px;
+  max-width: 1920px;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -91,6 +104,26 @@ input {
     rgba(127, 156, 223, 1) 29%,
     rgba(240, 226, 177, 1) 83%
   );
+}
+
+.main-footer{
+  height: 200px;
+  max-width: 1920px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  box-shadow: 0px 8px 0px rgba(71, 72, 73, 0.671);
+  background: #6778f3;
+  background: linear-gradient(
+    294deg,
+    rgba(103, 120, 243, 1) 0%,
+    rgba(127, 156, 223, 1) 29%,
+    rgba(240, 226, 177, 1) 83%
+  );
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .poke-cards-display {

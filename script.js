@@ -15,10 +15,15 @@ function init() {
   currentPkmns = pokemonAll;
 }
 
-async function fetchPokeData() {
-  openLoadingscreen();
-  const newOffset = offset + renderedAmount;
-  for (let i = offset; i < newOffset; i++) {
+function fetchPokeData() {
+  openLoadingscreen(); 
+  fetchData();
+  closeLoadingscreen();
+}
+
+async function fetchData(){
+   const newOffset = offset + renderedAmount;
+    for (let i = offset; i < newOffset; i++) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
     const eachPokeData = await response.json();
     if (eachPokeData.id <= maxPkmnId) {
@@ -30,7 +35,6 @@ async function fetchPokeData() {
   if (offset >= limit) {
     document.getElementById("loadingBtn").classList.add("display-none");
   }
-  closeLoadingscreen();
 }
 
 function pushPokemonIntoArray(eachPokeData) {
@@ -178,6 +182,7 @@ function searchInputValue() {
     const feedbackRef = document.getElementById("searchFeedback");
     feedbackRef.innerHTML = "please use at least 3 characters";
   }
+  document.getElementById("loadingBtn").classList.add("display-none");
 }
 
 function filterThroughCurrentPkmn(filterPkmn) {
@@ -206,7 +211,7 @@ function goForth(pokeIndex) {
   let modal = document.getElementById(`singleModal`);
   if (pokeIndex - 1 < 0) {
     modal.innerHTML = "";
-    pokeIndex = pokemonAll.length - 1;
+    pokeIndex = currentPkmns.length - 1;
     modal.innerHTML = getModalTemplate(pokeIndex);
   } else {
     modal.innerHTML = "";
@@ -218,8 +223,8 @@ function goForth(pokeIndex) {
 
 function goBack(pokeIndex) {
   let modal = document.getElementById(`singleModal`);
-  if (pokeIndex + 1 >= pokemonAll.length) {
-    pokeIndex = pokemonAll.length - pokeIndex - 1;
+  if (pokeIndex + 1 >= currentPkmns.length) {
+    pokeIndex = currentPkmns.length - pokeIndex - 1;
     modal.innerHTML = "";
     modal.innerHTML = getModalTemplate(pokeIndex);
   } else {
