@@ -35,6 +35,7 @@ dialog::backdrop {
   margin-left: 100px;
   height: 100%;
   width: 100%;
+  gap: 12px;
 }
 
 .modal-main {
@@ -64,7 +65,7 @@ dialog::backdrop {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #91a07e3b;
+  background-color: #7e86a03b;
   overflow: hidden;
 }
 
@@ -153,7 +154,8 @@ body.noscroll {
 }
 
 .display-toggle-on {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .underline {
