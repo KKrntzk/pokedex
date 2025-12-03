@@ -21,9 +21,13 @@
         ><img class="logo-img" src="./assets/img/logo/logo.png" alt=""
       /></a>
       <div class="search-bar">
-        <input id="searchBar" minlength="3" type="text" required />
+        <div class="align-search-btn">
+          <input id="searchBar" minlength="3" type="text" required />
+          <button onclick="searchInputValue()" class="search-btn">
+            search
+          </button>
+        </div>
         <p id="searchFeedback" class="feedback"></p>
-        <button onclick="searchInputValue()" class="search-btn">search</button>
       </div>
       <img class="logo-text" src="./assets/img/logo/sinnohpokedex.png" alt="" />
     </header>
@@ -38,9 +42,11 @@
 
       <dialog class="modal-layout" id="singleModal"></dialog>
 
-      <dialog onclick="openLoadingscreen()" class="loader" id="loadingDialog">
-        <!-- <span class="loader"></span> -->
-      </dialog>
+      <dialog
+        onclick="openLoadingscreen()"
+        class="loader"
+        id="loadingDialog"
+      ></dialog>
     </div>
   </body>
 </html>
