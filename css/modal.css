@@ -1,10 +1,10 @@
 .modal-layout {
-  font-family: "Roboto Flex";
-  height: 800px;
   width: 600px;
+  height: 800px;
   border-radius: 50px;
-  color: white;
   border: none;
+  color: white;
+  font-family: "Roboto Flex";
 }
 
 dialog {
@@ -19,32 +19,41 @@ dialog::backdrop {
 }
 
 .modal-info {
-  color: rgb(0, 0, 0);
-  height: 100%;
-  width: 100%;
-  background-color: #ffffff;
-  border-radius: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 40px;
+  color: rgb(0, 0, 0);
   font-size: 24px;
+}
+
+.modal-info-inner-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .modal-stats-inner {
   margin-top: 60px;
   margin-left: 100px;
-  height: 100%;
   width: 100%;
+  height: 100%;
   gap: 12px;
 }
 
 .modal-main {
-  width: 100%;
-  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 50%;
 }
 
 .outer-shell {
@@ -54,38 +63,38 @@ dialog::backdrop {
 }
 
 .modal-poke-shiny {
-  height: 300px;
   width: 300px;
+  height: 300px;
 }
 
 .modal-basic {
-  height: 800px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 800px;
   background-color: #7e86a03b;
   overflow: hidden;
 }
 
 .modal-header {
-  font-size: 32px;
-  height: 60px;
-  width: 90%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  height: 60px;
+  width: 90%;
   text-align: center;
+  font-size: 32px;
 }
 
 .modal-single-card-header {
-  padding-top: 8px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
   height: 40px;
   width: 80%;
-  display: flex;
-  justify-content: end;
-  align-items: start;
+  padding-top: 8px;
   font-weight: bold;
 }
 
@@ -97,8 +106,8 @@ dialog::backdrop {
 }
 
 .modal-poke-sprite {
-  height: 300px;
   width: 300px;
+  height: 300px;
   object-fit: contain;
   margin: -16px 0;
 }
@@ -108,36 +117,34 @@ dialog::backdrop {
 }
 
 .footer-modal {
-  height: 40px;
-  width: 80%;
   display: flex;
   justify-content: space-between;
+  width: 80%;
+  height: 40px;
   margin-bottom: 40px;
 }
 
-.modal-left-btn {
-  height: 70px;
+.modal-left-btn,
+.modal-right-btn {
   width: 70px;
+  height: 70px;
   border-radius: 50px;
   padding: 10px;
   background-color: #7f9cdf;
-  background-image: url("../assets/img/left.png");
   background-size: contain;
+}
+
+.modal-left-btn {
+  background-image: url("../assets/img/left.png");
 }
 
 .modal-right-btn {
-  height: 70px;
-  width: 70px;
-  border-radius: 50px;
-  padding: 10px;
-  background-color: #7f9cdf;
   background-image: url("../assets/img/right.png");
-  background-size: contain;
 }
 
 a {
-  text-decoration: none;
   color: rgb(0, 0, 0);
+  text-decoration: none;
   text-shadow: 1px 1px 2px rgb(32, 29, 29);
 }
 
@@ -158,38 +165,29 @@ body.noscroll {
   text-decoration: underline;
 }
 
-.modal-info-inner-layout {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+/* -------------------- MEDIA QUERIES -------------------- */
 
-@media(max-width:700px){
-  .modal-layout {  
+@media (max-width: 700px) {
+  .modal-layout {
     width: 400px;
-}
-.modal-poke-sprite {
-    height: 200px;
+  }
+
+  .modal-poke-sprite {
     width: 200px;
-}
-.modal-header {
+    height: 200px;
+  }
+
+  .modal-header {
     font-size: 22px;
-}
+  }
 
-.modal-stats-inner {
+  .modal-stats-inner {
     font-size: 18px;
-}
+  }
 
-.modal-right-btn {
+  .modal-left-btn,
+  .modal-right-btn {
+    width: 50px;
     height: 50px;
-    width: 50px;
-}
-
-.modal-left-btn {
-     height: 50px;
-    width: 50px;
-}
+  }
 }
