@@ -185,9 +185,9 @@ function closeDialog() {
 //#region filter
 function searchInputValue() {
   const soughtPkmn = document.getElementById("searchBar").value;
-    if (soughtPkmn.length === 0) {
-        window.location.href = "index.html";
-    }
+  if (soughtPkmn.length === 0) {
+      window.location.href = "index.html";
+  }
   if (soughtPkmn.length >= 3) {
     filterThroughCurrentPkmn(soughtPkmn);
   } else {
