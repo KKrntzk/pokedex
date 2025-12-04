@@ -84,7 +84,6 @@ function getPokeModalInfo(pokeIndex) {
 
 }
 
-
 function renderModal(pokeIndex) {
   renderStatInfo(pokeIndex);
   renderShiny(pokeIndex);
@@ -170,18 +169,25 @@ function bubblingPrevention(event) {
 
 function closeDialog() {
   const dialogRef = document.getElementById(`singleModal`);
-  const mdlBtnLRef = document.getElementById("modalBtnL");
-  mdlBtnLRef.classList.remove('display-none');
-  const mdlBtnRRef = document.getElementById("modalBtnR");
-  mdlBtnRRef.classList.remove('display-none');
-  dialogRef.close();
-  document.body.classList.remove("noscroll");
+  if (dialogRef.open) {
+    if (currentPkmns.length === 1) {
+    const mdlBtnLRef = document.getElementById("modalBtnL");
+    mdlBtnLRef.classList.remove('display-none');
+    const mdlBtnRRef = document.getElementById("modalBtnR");
+    mdlBtnRRef.classList.remove('display-none');
+    }
+    dialogRef.close();
+    document.body.classList.remove("noscroll");
+  }
 }
 //#endregion
 
 //#region filter
 function searchInputValue() {
   const soughtPkmn = document.getElementById("searchBar").value;
+    if (soughtPkmn.length === 0) {
+        window.location.href = "index.html";
+    }
   if (soughtPkmn.length >= 3) {
     filterThroughCurrentPkmn(soughtPkmn);
   } else {
@@ -204,7 +210,6 @@ function filterThroughCurrentPkmn(filterPkmn) {
     contentRef.innerHTML = "";
   } 
   else {
-    console.log(currentPkmns);
     const contentRef = document.getElementById("pokemonCardsTarget");
     feedbackRef.innerHTML = "";
     contentRef.innerHTML = "";
