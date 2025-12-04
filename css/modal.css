@@ -26,7 +26,7 @@ dialog::backdrop {
   height: 100%;
   background-color: #ffffff;
   border-radius: 40px;
-  color: rgb(0, 0, 0);
+  color: #000;
   font-size: 24px;
 }
 
@@ -102,7 +102,7 @@ dialog::backdrop {
   height: 40px;
   font-size: 32px;
   font-weight: bold;
-  text-shadow: 1px 1px 2px rgb(32, 29, 29);
+  text-shadow: 1px 1px 2px #201d1d;
 }
 
 .modal-poke-sprite {
@@ -143,9 +143,9 @@ dialog::backdrop {
 }
 
 a {
-  color: rgb(0, 0, 0);
+  color: #000;
   text-decoration: none;
-  text-shadow: 1px 1px 2px rgb(32, 29, 29);
+  text-shadow: 1px 1px 2px #201d1d;
 }
 
 body.noscroll {
@@ -170,7 +170,7 @@ body.noscroll {
 @media (max-width: 700px) {
   .modal-layout {
     width: 400px;
-    height: 600px;
+    height: 570px;
   }
 
   .modal-poke-sprite {
@@ -188,8 +188,33 @@ body.noscroll {
 
   .modal-left-btn,
   .modal-right-btn {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .modal-basic {
+    height: auto;
+  }
+
+  .modal-info {
+    height: 350px;
+  }
+
+  .modal-poke-shiny {
+    width: 200px;
+    height: 200px;
+  }
+
+  .modal-stats-inner {
+    margin-top: 20px;
+  }
+
+  .footer-modal {
+    margin-bottom: 10px;
+  }
+
+  .modal-info-inner-layout {
+    height: 70%;
   }
 }
 
@@ -198,13 +223,16 @@ body.noscroll {
     flex-direction: column;
     align-items: center;
   }
+
   .modal-type-container {
     justify-content: center;
   }
+
   .modal-poke-name {
     display: flex;
     justify-content: center;
   }
+
   .modal-poke-sprite {
     display: flex;
     justify-content: center;
@@ -217,7 +245,7 @@ body.noscroll {
     justify-content: space-between;
   }
 
-  .mdl-mobile-close-btn{
+  .mdl-mobile-close-btn {
     color: rgba(255, 0, 0, 0.493);
     font-weight: bold;
     background-color: #2b85ed7c;
@@ -228,5 +256,4 @@ body.noscroll {
     justify-content: center;
     align-items: center;
   }
-
 }
