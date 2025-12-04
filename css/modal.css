@@ -213,4 +213,20 @@ body.noscroll {
     width: 150px;
   }
 
+  .modal-single-card-header {
+    justify-content: space-between;
+  }
+
+  .mdl-mobile-close-btn{
+    color: rgba(255, 0, 0, 0.493);
+    font-weight: bold;
+    background-color: #2b85ed7c;
+    border-radius: 15px;
+    width: 30px;
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+
 }
