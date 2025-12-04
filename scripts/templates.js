@@ -1,22 +1,13 @@
 function getCardTemplate(pokeIndex) {
   return /*html*/ `
-    <div 
-      onclick="bubblingPrevention(event), openDialog(${pokeIndex})" 
-      id="singleCard(${pokeIndex})" 
-      class="single-cards"
-    >
+    <div onclick="bubblingPrevention(event), openDialog(${pokeIndex})" id="singleCard(${pokeIndex})" class="single-cards" >
       <header class="single-card-header">
         <div># <span id="pokeId(${pokeIndex})"></span></div>
       </header>
       
       <span class="poke-name" id="pokeName(${pokeIndex})"></span>
       
-      <img 
-        class="poke-sprite" 
-        id="pokeSprite(${pokeIndex})" 
-        src=""
-        alt="Pokemon Sprite"
-      />
+      <img class="poke-sprite" id="pokeSprite(${pokeIndex})" src="" alt="Pokemon Sprite"/>
       
       <div id="pokeType(${pokeIndex})" class="type-container"></div>
     </div>
@@ -31,10 +22,7 @@ function getTypeTemplate(type) {
 
 function getModalTemplate(pokeIndex) {
   return /*html*/ `
-    <div 
-      onclick="bubblingPrevention(event)" 
-      id="eachModal(${pokeIndex})"
-    >
+    <div onclick="bubblingPrevention(event)" id="eachModal(${pokeIndex})">
       <section class="modal-basic" id="basicInfo(${pokeIndex})">
         
         <section class="modal-main">

@@ -72,6 +72,7 @@ function renderEachCardType(arr, pokeIndex) {
   }
   document.getElementById(`pokeSprite(${pokeIndex})`).setAttribute("src", arr[pokeIndex].sprite);
 }
+
 //#region modal
 function getPokeModalInfo(pokeIndex) {
   document.getElementById(`pokeModalName(${pokeIndex})`).innerHTML = currentPkmns[pokeIndex].name.charAt(0).toUpperCase() + currentPkmns[pokeIndex].name.substr(1);
@@ -81,7 +82,7 @@ function getPokeModalInfo(pokeIndex) {
     typeTemplate.innerHTML += getTypeTemplate(pokemonAll[pokeIndex].type[j].type);
   }
   document.getElementById(`pokeModalSprite(${pokeIndex})`).setAttribute("src", currentPkmns[pokeIndex].sprite);
-  }
+}
 
 function renderModal(pokeIndex) {
   renderStatInfo(pokeIndex);
@@ -146,6 +147,7 @@ function toggleStats() {
   shinySectionRef.classList.remove("display-toggle-on");
 }
 //#endregion
+
 //#region dialog
 function openDialog(pokeIndex) {
   const dialogRef = document.getElementById(`singleModal`);
@@ -165,6 +167,7 @@ function closeDialog() {
   document.body.classList.remove("noscroll");
 }
 //#endregion
+
 //#region filter
 function searchInputValue() {
   const soughtPkmn = document.getElementById("searchBar").value;
@@ -203,6 +206,7 @@ function renderCurrentPkms() {
   }
 }
 //#endregion
+
 //#region arrows
 function goForth(pokeIndex) {
   let modal = document.getElementById(`singleModal`);
@@ -232,6 +236,7 @@ function goBack(pokeIndex) {
   renderModal(pokeIndex);
 }
 //#endregion
+
 //#region loadingsreen
 function openLoadingscreen() {
   const loadingscreenRef = document.getElementById("loadingDialog");
