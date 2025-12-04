@@ -31,7 +31,6 @@ async function fetchData(){
       offset++;
     }
   }
-
   if (offset >= limit) {
     document.getElementById("loadingBtn").classList.add("display-none");
   }
