@@ -312,3 +312,16 @@ input {
     width: 300px;
   }
 }
+
+@media (max-width: 425px){
+  .modal-single-card-header {
+    justify-content: space-between;
+  }
+
+  .mdl-mobile-close-btn{
+    display: flex;
+    padding: 2px;
+    justify-content: center;
+    align-items: center;
+  }
+}

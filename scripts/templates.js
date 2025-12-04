@@ -27,6 +27,7 @@ function getModalTemplate(pokeIndex) {
         
         <section class="modal-main">
           <header class="modal-single-card-header">
+            <button onclick="closeDialog()" class="mdl-mobile-close-btn display-none">x</button>
             <div># <span id="pokeModalId(${pokeIndex})"></span></div>
           </header>    
 

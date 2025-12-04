@@ -170,6 +170,7 @@ body.noscroll {
 @media (max-width: 700px) {
   .modal-layout {
     width: 400px;
+    height: 600px;
   }
 
   .modal-poke-sprite {
@@ -190,4 +191,26 @@ body.noscroll {
     width: 50px;
     height: 50px;
   }
+}
+
+@media (max-width: 400px) {
+  .outer-shell {
+    flex-direction: column;
+    align-items: center;
+  }
+  .modal-type-container {
+    justify-content: center;
+  }
+  .modal-poke-name {
+    display: flex;
+    justify-content: center;
+  }
+  .modal-poke-sprite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+  }
+
 }
