@@ -81,7 +81,6 @@ function getPokeModalInfo(pokeIndex) {
     typeTemplate.innerHTML += getTypeTemplate(pokemonAll[pokeIndex].type[j].type);
   }
   document.getElementById(`pokeModalSprite(${pokeIndex})`).setAttribute("src", currentPkmns[pokeIndex].sprite);
-
 }
 
 function renderModal(pokeIndex) {
