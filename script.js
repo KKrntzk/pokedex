@@ -82,7 +82,9 @@ function getPokeModalInfo(pokeIndex) {
     typeTemplate.innerHTML += getTypeTemplate(pokemonAll[pokeIndex].type[j].type);
   }
   document.getElementById(`pokeModalSprite(${pokeIndex})`).setAttribute("src", currentPkmns[pokeIndex].sprite);
+
 }
+
 
 function renderModal(pokeIndex) {
   renderStatInfo(pokeIndex);
@@ -152,6 +154,12 @@ function toggleStats() {
 function openDialog(pokeIndex) {
   const dialogRef = document.getElementById(`singleModal`);
   dialogRef.innerHTML = getModalTemplate(pokeIndex);
+    if (currentPkmns.length === 1) {
+    const mdlBtnLRef = document.getElementById("modalBtnL");
+    mdlBtnLRef.classList.add('display-none');
+    const mdlBtnRRef = document.getElementById("modalBtnR");
+    mdlBtnRRef.classList.add('display-none');
+  }
   renderModal(pokeIndex);
   dialogRef.showModal(pokeIndex);
   document.body.classList.add("noscroll");
@@ -163,6 +171,10 @@ function bubblingPrevention(event) {
 
 function closeDialog() {
   const dialogRef = document.getElementById(`singleModal`);
+  const mdlBtnLRef = document.getElementById("modalBtnL");
+  mdlBtnLRef.classList.remove('display-none');
+  const mdlBtnRRef = document.getElementById("modalBtnR");
+  mdlBtnRRef.classList.remove('display-none');
   dialogRef.close();
   document.body.classList.remove("noscroll");
 }
@@ -191,7 +203,8 @@ function filterThroughCurrentPkmn(filterPkmn) {
     feedbackRef.innerHTML = "no matches found";
     const contentRef = document.getElementById("pokemonCardsTarget");
     contentRef.innerHTML = "";
-  } else {
+  } 
+  else {
     console.log(currentPkmns);
     const contentRef = document.getElementById("pokemonCardsTarget");
     feedbackRef.innerHTML = "";

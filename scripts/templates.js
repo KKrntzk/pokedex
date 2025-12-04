@@ -70,8 +70,8 @@ function getModalTemplate(pokeIndex) {
           </div>
 
           <footer class="footer-modal">
-            <button class="modal-left-btn" onclick="bubblingPrevention(event), goForth(${pokeIndex})"></button>
-            <button class="modal-right-btn" onclick="bubblingPrevention(event), goBack(${pokeIndex})"></button>
+            <button id="modalBtnL" class="modal-left-btn" onclick="bubblingPrevention(event), goForth(${pokeIndex})"></button>
+            <button id="modalBtnR" class="modal-right-btn" onclick="bubblingPrevention(event), goBack(${pokeIndex})"></button>
           </footer>
         </section>
 
